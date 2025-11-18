@@ -43,7 +43,7 @@ const Navbar = () => {
 
           <Link
             href="/contact"
-            className="bg-[#1C657E] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#247a96] transition-all shadow-md border border-white/10"
+            className="bg-[#1C657E] text-white text-sm font-bold px-3 py-3 rounded-xl hover:bg-[#247a96] transition-all shadow-md border border-white/10"
           >
             CONTACT US
           </Link>
