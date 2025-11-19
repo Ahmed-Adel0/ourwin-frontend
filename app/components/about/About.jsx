@@ -4,9 +4,9 @@ import SectionWrapper from "../SectionWrapper";
 
 const About = () => {
   return (
-    <section className="w-full py-20 bg-black px-4">
+    <section className="w-full py-20 bg-black px-4 md:px-6">
       <SectionWrapper>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 md:gap-6  items-center">
           <div className="order-2 md:order-1">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white">
               WE ARE MORE THAN{" "}
@@ -37,9 +37,9 @@ const About = () => {
           </div>
 
           <div className="order-1 md:order-2 hidden md:block">
-            <div className="relative w-full aspect-square max-w-md mx-auto">
+            <div className="relative w-full aspect-square max-w-md mx-auto md:ml-auto md:mr-0">
               <Image
-                src="/Asset 1.png"
+                src="/Icon.svg"
                 alt="Agency Graphic Rings"
                 fill
                 style={{ objectFit: "contain" }}

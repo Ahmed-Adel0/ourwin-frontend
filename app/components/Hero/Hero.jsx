@@ -4,7 +4,7 @@ import SectionWrapper from "../SectionWrapper";
 
 const Hero = () => {
   return (
-    <section className="w-full pt-24 pb-12 bg-black px-4">
+    <section className="w-full pt-24 pb-12 bg-black px-4 md:px-6">
       <div className="relative w-full min-h-[80vh] flex items-center justify-start rounded-2xl overflow-hidden bg-[#0b253b] shadow-2xl shadow-cyan-900/50 mt-6 mb-12">
         <Image
           src="/hero-bg.jpg"
