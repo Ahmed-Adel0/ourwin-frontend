@@ -10,7 +10,7 @@ const ServiceCard = ({ data }) => {
     >
       <div className="flex items-center mb-4">
         <span className="text-2xl mr-3 text-[#45B7BA]">{data.icon}</span>
-        <h3 className="text-lg md:text-xl font-bold text-white uppercase">
+        <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-normal">
           {data.title}
         </h3>
       </div>

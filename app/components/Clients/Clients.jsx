@@ -39,7 +39,7 @@ const Clients = () => {
       className="bg-black py-20"
     >
       {/* الهيدر مع تدرج وارتفاع أكبر وحواف مستديرة */}
-      <div className="bg-gradient-to-r from-[#0B3B4E] to-[#45B7BA] py-6 md:py-8 px-6 rounded-2xl flex justify-between items-center text-white">
+      <div className="bg-gradient-to-r from-[#003349] to-[#006781] py-6 md:py-8 px-6 rounded-2xl flex justify-between items-center text-white shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
         <h2 className="text-xl md:text-2xl font-bold uppercase">CLIENTS</h2>
         <Link
           href="/clients-page"

@@ -5,7 +5,7 @@ import TeamMembers from "./TeamMembers";
 
 const ProjectRow = ({ project }) => {
   return (
-    <div className="bg-[#0b253b] p-6 rounded-xl border-b border-t border-white/5 shadow-2xl shadow-teal-900/50">
+    <div className="bg-[#003349] p-6 rounded-xl border-b border-t border-white/5 shadow-2xl shadow-teal-900/50">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         <div className="flex flex-col justify-between p-2 text-white/90">
           <div>
@@ -22,7 +22,7 @@ const ProjectRow = ({ project }) => {
               <span className="text-xs uppercase text-gray-400 mr-2">
                 Category
               </span>
-              <span className="inline-block bg-[#052636] text-xs text-white px-3 py-1 rounded-full">
+              <span className="inline-block bg-[#00445C] text-xs text-white px-3 py-1 rounded-full">
                 {project.category}
               </span>
             </p>
@@ -50,7 +50,7 @@ const ProjectRow = ({ project }) => {
         </div>
 
         <div className="lg:order-3 flex flex-col">
-          <div className="bg-[#052636] rounded-2xl p-4 flex flex-col justify-between h-full">
+          <div className="bg-[#00445C] rounded-2xl p-4 flex flex-col justify-between h-full">
             <div>
               <h4 className="text-sm font-semibold mb-2 text-[#45B7BA] uppercase">
                 TECHNOLOGIES USED
@@ -59,7 +59,7 @@ const ProjectRow = ({ project }) => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-[#0b253b] text-white text-xs font-medium px-3 py-1 rounded-full"
+                    className="bg-[#006781] text-white text-xs font-medium px-3 py-1 rounded-full"
                   >
                     {tech}
                   </span>

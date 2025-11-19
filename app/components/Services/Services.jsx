@@ -73,7 +73,7 @@ const Services = () => {
   return (
     <section className="w-full bg-black py-20 px-4 md:px-6">
       <SectionWrapper id="services-section">
-        <div className="bg-gradient-to-r from-[#0B3B4E] to-[#45B7BA] py-6 md:py-8 px-6 rounded-2xl text-white mb-12">
+        <div className="bg-gradient-to-r from-[#003349] to-[#006781] py-6 md:py-8 px-6 rounded-2xl text-white mb-12 shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
           <h2 className="text-3xl md:text-4xl font-extrabold uppercase">
             OUR SERVICES
           </h2>

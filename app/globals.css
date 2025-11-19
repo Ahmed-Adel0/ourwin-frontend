@@ -29,4 +29,5 @@ body {
   color: var(--foreground);
   font-family: "ClashDisplay", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+  letter-spacing: 0.05em;
 }
