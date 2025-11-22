@@ -1,5 +1,6 @@
 
 import React from "react";
+import Image from "next/image";
 
 const ServiceCard = ({ data }) => {
   return (
@@ -9,8 +10,15 @@ const ServiceCard = ({ data }) => {
                  hover:scale-[1.03] hover:border-[#45B7BA] flex flex-col h-full"
     >
       <div className="flex items-center mb-4">
-        <span className="text-2xl mr-3 text-[#45B7BA]">{data.icon}</span>
-        <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-normal">
+        <div className="w-10 h-10 mr-3 relative flex-shrink-0">
+          <Image
+            src={data.icon}
+            alt={data.title}
+            fill
+            className="object-contain"
+          />
+        </div>
+        <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-wider">
           {data.title}
         </h3>
       </div>

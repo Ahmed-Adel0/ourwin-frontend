@@ -24,12 +24,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-2 items-center">
           {[
-            "HOME",
-            "SERVICES",
-            "PROJECTS",
-            "ABOUT",
-            "PORTFOLIO",
-            "CLIENTS",
+            "Home",
+            "Services",
+            "Projects",
+            "Clients",
+            "Portfolio",
+            "About us",
           ].map((item) => (
             <li key={item}>
               <Link
@@ -45,7 +45,7 @@ const Navbar = () => {
             href="/contact"
             className="bg-[#1C657E] text-white text-sm font-bold px-3 py-3 rounded-xl hover:bg-[#247a96] transition-all shadow-md border border-white/10"
           >
-            CONTACT US
+            Contact us
           </Link>
         </ul>
 
@@ -67,12 +67,12 @@ const Navbar = () => {
         <div className="absolute top-20 left-4 right-4 bg-linear-to-r from-[#04364A] to-[#64CCC5] rounded-2xl p-4 shadow-lg lg:hidden">
           <ul className="flex flex-col gap-3">
             {[
-              "HOME",
-              "SERVICES",
-              "PROJECTS",
-              "ABOUT",
-              "PORTFOLIO",
-              "CLIENTS",
+              "Home",
+              "Services",
+              "Projects",
+              "Clients",
+              "Portfolio",
+              "About us",
             ].map((item) => (
               <li key={item}>
                 <Link
@@ -89,7 +89,7 @@ const Navbar = () => {
               className="block bg-[#1C657E] text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-[#247a96] transition-all shadow-md border border-white/10 text-center"
               onClick={() => setIsOpen(false)}
             >
-              CONTACT US
+              Contact us
             </Link>
           </ul>
         </div>

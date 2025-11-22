@@ -1,4 +1,5 @@
 import SectionWrapper from "../SectionWrapper";
+import SectionHeader from "../SectionHeader";
 import Link from "next/link";
 
 const reasonsData = [
@@ -29,11 +30,7 @@ const Reasons = () => {
     <section className="w-full bg-black py-20 px-4 md:px-6">
       <SectionWrapper id="reasons-section">
         {/* Header bar */}
-        <div className="bg-gradient-to-r from-[#003349] to-[#006781] py-6 md:py-8 px-6 rounded-2xl text-white mb-10 md:mb-12 shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase text-center md:text-left">
-            REASONS TO CHOOSE OUTWIN FOR YOUR DIGITAL JOURNEY
-          </h2>
-        </div>
+        <SectionHeader title="REASONS TO CHOOSE OUTWIN FOR YOUR DIGITAL JOURNEY" />
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

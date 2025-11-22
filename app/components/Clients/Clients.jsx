@@ -1,5 +1,6 @@
 
 import SectionWrapper from "../SectionWrapper";
+import SectionHeader from "../SectionHeader";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -38,19 +39,21 @@ const Clients = () => {
       id="clients-section"
       className="bg-black py-20"
     >
-      {/* الهيدر مع تدرج وارتفاع أكبر وحواف مستديرة */}
-      <div className="bg-gradient-to-r from-[#003349] to-[#006781] py-6 md:py-8 px-6 rounded-2xl flex justify-between items-center text-white shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
-        <h2 className="text-xl md:text-2xl font-bold uppercase">CLIENTS</h2>
-        <Link
-          href="/clients-page"
-          className="text-base md:text-lg text-white font-semibold flex items-center hover:text-white/80 transition-colors"
-        >
-          ALL CLIENTS <span className="ml-2">↗</span>
-        </Link>
-      </div>
+      {/* Header unified with other sections */}
+      <SectionHeader
+        title="CLIENTS"
+        rightNode={
+          <Link
+            href="/clients-page"
+            className="text-base md:text-lg text-white font-semibold flex items-center hover:text-white/80 transition-colors"
+          >
+            ALL CLIENTS <span className="ml-2">↗</span>
+          </Link>
+        }
+      />
 
       {/* شبكة الشعارات: 12 شعار مع lg:grid-cols-6 => صفّان على الشاشات الكبيرة */}
-      <div className="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 items-center justify-center">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 items-center justify-center">
         {clientLogos.map((client, index) => (
           <div
             key={index}

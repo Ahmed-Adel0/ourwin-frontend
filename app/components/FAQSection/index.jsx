@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import SectionHeader from "../SectionHeader";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -40,17 +42,20 @@ export default function FAQSection() {
   return (
     <section className="w-full bg-black py-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-gradient-to-r from-[#003349] to-[#006781] py-6 md:py-8 px-6 rounded-2xl text-white mb-12 flex items-center justify-between shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
-          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wide">
-            Frequently Asked Questions
-          </h2>
-          <button className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/40">
-              ↗
-            </span>
-            <span className="opacity-80">View All</span>
-          </button>
-        </div>
+        <SectionHeader
+          title="Frequently Asked Questions"
+          rightNode={
+            <Link
+              href="/faq"
+              className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase hover:text-white/80 transition-colors"
+            >
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/40">
+                ↗
+              </span>
+              <span className="opacity-80">View All</span>
+            </Link>
+          }
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_minmax(0,1fr)] gap-8">
           <div className="space-y-4">
