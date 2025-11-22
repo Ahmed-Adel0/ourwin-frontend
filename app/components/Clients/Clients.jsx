@@ -1,36 +1,22 @@
+"use client";
 
 import SectionWrapper from "../SectionWrapper";
 import SectionHeader from "../SectionHeader";
 import Image from "next/image";
 import Link from "next/link";
 
-// بيانات وهمية (Data) للشعارات - استخدام بعض الصور من public/Clients
-const clientLogos = [
-  { name: "Client 1", src: "/Clients/Asset 4.png" },
-  { name: "Client 2", src: "/Clients/Asset 5.png" },
-  { name: "Client 3", src: "/Clients/Asset 6.png" },
-  { name: "Client 4", src: "/Clients/Asset 7.png" },
-  { name: "Client 5", src: "/Clients/Asset 8.png" },
-  { name: "Client 6", src: "/Clients/Asset 9.png" },
-  { name: "Client 7", src: "/Clients/Asset 10.png" },
-  { name: "Client 8", src: "/Clients/Asset 11.png" },
-  { name: "Client 9", src: "/Clients/Asset 12.png" },
-  { name: "Client 10", src: "/Clients/Asset 13.png" },
-  { name: "Client 11", src: "/Clients/Asset 14.png" },
-  { name: "Client 12", src: "/Clients/Asset 15.png" },
-  { name: "Client 13", src: "/Clients/Asset 16.png" },
-  { name: "Client 14", src: "/Clients/Asset 17.png" },
-  { name: "Client 15", src: "/Clients/Asset 18.png" },
-  { name: "Client 16", src: "/Clients/Asset 19.png" },
-  { name: "Client 17", src: "/Clients/Asset 20.png" },
-  { name: "Client 18", src: "/Clients/Asset 21.png" },
-  { name: "Client 19", src: "/Clients/Asset 22.png" },
-  { name: "Client 20", src: "/Clients/Asset 23.png" },
-  { name: "Client 21", src: "/Clients/Asset 24.png" },
-  { name: "Client 22", src: "/Clients/Asset 25.png" },
-  { name: "Client 23", src: "/Clients/Asset 26.png" },
-  { name: "Client 24", src: "/Clients/Asset 27.png" },
+// توليد كل شعارات العملاء برقم الأصول من public/Clients
+const clientLogoNumbers = [
+  // Assets 4 - 27
+  ...Array.from({ length: 24 }, (_, i) => 4 + i),
+  // Assets 60 - 93
+  ...Array.from({ length: 34 }, (_, i) => 60 + i),
 ];
+
+const clientLogos = clientLogoNumbers.map((assetNumber, index) => ({
+  name: `Client ${index + 1}`,
+  src: `/Clients/Asset ${assetNumber}.png`,
+}));
 
 const Clients = () => {
   return (
@@ -51,23 +37,97 @@ const Clients = () => {
           </Link>
         }
       />
+      {/* أشرطة شعارات متحركة في 4 صفوف */}
+      <div className="mt-12 space-y-6">
+        {Array.from({ length: 4 }, (_, rowIndex) => {
+          const logosPerRow = Math.floor(clientLogos.length / 4);
+          const start = rowIndex * logosPerRow;
+          const end =
+            rowIndex === 3
+              ? clientLogos.length
+              : start + logosPerRow; // الصف الأخير يأخذ الباقي
+          const rowLogos = clientLogos.slice(start, end);
+          const isReverse = rowIndex >= 2; // الصفوف 3 و 4 عكس الاتجاه (لابتوب / ديسكتوب)
 
-      {/* شبكة الشعارات: 12 شعار مع lg:grid-cols-6 => صفّان على الشاشات الكبيرة */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 items-center justify-center">
-        {clientLogos.map((client, index) => (
-          <div
-            key={index}
-            className="relative w-full aspect-[4/2] p-2 opacity-75 hover:opacity-100 transition-opacity duration-300"
-          >
-            <Image
-              src={client.src}
-              alt={client.name}
-              fill
-              className="object-contain grayscale contrast-200"
-            />
-          </div>
-        ))}
+          // نكرر الشعار مرتين فقط لمسار مستمر
+          const trackLogos = [...rowLogos, ...rowLogos];
+
+          return (
+            <div
+              key={rowIndex}
+              className={`clients-row overflow-hidden ${
+                isReverse ? "clients-row--reverse" : ""
+              } ${rowIndex % 2 === 1 ? "clients-row--mobile-alt" : ""}`}
+            >
+              <div className="clients-track flex items-center">
+                {trackLogos.map((client, idx) => (
+                  <div
+                    key={`${client.name}-${idx}`}
+                    className="clients-logo relative w-40 aspect-[4/2] p-2 mr-10 opacity-75 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
+                  >
+                    <Image
+                      src={client.src}
+                      alt={client.name}
+                      fill
+                      className="object-contain grayscale contrast-200"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
+
+      {/* أنيميشن الشريط المتحرك مع إيقاف عند الـ hover */}
+      <style jsx>{`
+        .clients-track {
+          /* سرعة موحدة لكل المقاسات تقريبًا */
+          animation: clients-marquee 20s linear infinite alternate;
+          will-change: transform;
+        }
+
+        .clients-row--reverse .clients-track {
+          animation-direction: alternate-reverse;
+        }
+
+        .clients-row:hover .clients-track {
+          animation-play-state: paused;
+        }
+
+        /* موبايل: نفس السرعة لكن مع عكس الاتجاه بين الصفوف */
+        @media (max-width: 767px) {
+          .clients-track {
+            animation-duration: 20s;
+          }
+
+          /* إعادة ضبط الاتجاه الافتراضي لكل الصفوف على الموبايل */
+          .clients-row .clients-track {
+            animation-direction: alternate;
+          }
+
+          /* الصفوف ذات الكلاس الخاص تتحرك في الاتجاه المعاكس */
+          .clients-row--mobile-alt .clients-track {
+            animation-direction: alternate-reverse;
+          }
+        }
+
+        /* لابتوب / شاشات كبيرة: نفس السرعة الموحدة */
+        @media (min-width: 1024px) {
+          .clients-track {
+            animation-duration: 20s;
+          }
+        }
+
+        @keyframes clients-marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </SectionWrapper>
   );
 };

@@ -1,9 +1,10 @@
+"use client";
 
 import SectionWrapper from "../SectionWrapper";
-import ProjectRow from "./ProjectRow";
 import Link from "next/link";
+import Image from "next/image";
 
-const projectsData = [
+const baseProjects = [
   {
     title: "ZENITH FITNESS APP",
     category: "Mobile App Development",
@@ -13,7 +14,7 @@ const projectsData = [
     imageUrl: "/hands.webp",
     technologies: ["React Native", "Firebase", "Redux", "REST API", "MongoDB"],
     team: 4,
-    detailsLink: "#",
+    detailsLink: "/projects/zenith-fitness-app",
   },
   {
     title: "A-AURA ECOMMERCE",
@@ -24,7 +25,7 @@ const projectsData = [
     imageUrl: "/hands.webp",
     technologies: ["Wordpress", "PHP", "HTML5", "CSS3", "Javascript"],
     team: 5,
-    detailsLink: "#",
+    detailsLink: "/projects/a-aura-ecommerce",
   },
   {
     title: "A-AURA ECOMMERCE",
@@ -35,9 +36,15 @@ const projectsData = [
     imageUrl: "/hands.webp",
     technologies: ["Wordpress", "PHP", "HTML5", "CSS3", "Javascript"],
     team: 5,
-    detailsLink: "#",
+    detailsLink: "/projects/a-aura-ecommerce",
   },
 ];
+
+// Duplicate base projects to create 12 items (6 per row)
+const projectsData = Array.from({ length: 12 }, (_, index) => ({
+  ...baseProjects[index % baseProjects.length],
+  id: index,
+}));
 
 const Projects = () => {
   return (
@@ -55,11 +62,102 @@ const Projects = () => {
           </Link>
         </div>
 
-        <div className="space-y-12">
-          {projectsData.map((project, index) => (
-            <ProjectRow key={index} project={project} />
-          ))}
+        {/* Two marquee rows of projects with ping-pong animation */}
+        <div className="space-y-10 mt-8">
+          {[0, 1].map((rowIndex) => {
+            const start = rowIndex * 6;
+            const end = start + 6;
+            const rowProjects = projectsData.slice(start, end);
+
+            return (
+              <div
+                key={rowIndex}
+                className={`projects-row-marquee overflow-hidden ${
+                  rowIndex === 1 ? "projects-row-marquee--reverse" : ""
+                }`}
+              >
+                <div className="projects-row-track flex items-stretch">
+                  {[...rowProjects, ...rowProjects].map((project, idx) => (
+                    <div
+                      key={`${project.title}-${idx}`}
+                      className="project-card w-80 sm:w-96 flex-shrink-0 mr-6 last:mr-0 bg-[#003349] rounded-2xl border border-white/10 shadow-2xl shadow-teal-900/50 overflow-hidden"
+                    >
+                      <div className="relative w-full aspect-video overflow-hidden">
+                        <Image
+                          src={project.imageUrl}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-[1.05]"
+                        />
+                      </div>
+
+                      <div className="p-5 flex flex-col justify-between h-full text-white/90">
+                        <div>
+                          <h3 className="text-lg md:text-xl font-bold mb-1">
+                            {project.title}
+                          </h3>
+                          <p className="text-xs uppercase tracking-wide text-gray-400 mb-1">
+                            {project.category}
+                          </p>
+                          <p className="text-sm text-gray-300 mb-4 line-clamp-3">
+                            {project.description}
+                          </p>
+
+                          {/* Project link: centered below paragraph and visually prominent */}
+                          <div className="flex justify-center mt-2 mb-2">
+                            <Link
+                              href={project.detailsLink}
+                              className="inline-block bg-[#00445C] hover:bg-[#006781] text-[11px] md:text-xs font-semibold tracking-wide uppercase text-white px-4 py-2 rounded-full border border-white/10 shadow-md shadow-teal-900/40 transition-colors"
+                            >
+                              PROJECT LINK
+                            </Link>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between mt-2 pt-3 border-t border-white/10">
+                          <span className="inline-block bg-[#00445C] text-xs text-white px-3 py-1 rounded-full">
+                            {project.category}
+                          </span>
+                          <Link
+                            href={project.detailsLink}
+                            className="text-[#45B7BA] text-xs font-semibold hover:underline"
+                          >
+                            DETAILS ↗
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
+
+        {/* Rows animation: first row one direction, second row opposite */}
+        <style jsx>{`
+          .projects-row-track {
+            animation: projects-marquee 20s linear infinite alternate;
+            will-change: transform;
+          }
+
+          .projects-row-marquee--reverse .projects-row-track {
+            animation-direction: alternate-reverse;
+          }
+
+          .projects-row-marquee:hover .projects-row-track {
+            animation-play-state: paused;
+          }
+
+          @keyframes projects-marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-40%);
+            }
+          }
+        `}</style>
       </SectionWrapper>
     </section>
   );
