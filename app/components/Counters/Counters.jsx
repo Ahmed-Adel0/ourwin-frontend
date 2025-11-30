@@ -11,7 +11,7 @@ const stats = [
 
 const Counters = () => {
   return (
-    <SectionWrapper maxW="max-w-7xl" className="py-20 bg-black">
+    <SectionWrapper maxW="max-w-7xl" className="pb-10  bg-black">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
         {stats.map((stat, index) => (
           <div

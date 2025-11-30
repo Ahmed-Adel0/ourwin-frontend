@@ -15,6 +15,13 @@
   --font-roboto-flex: var(--font-roboto-flex);
   --background: #ffffff;
   --foreground: #171717;
+  --page-bg: #000000;
+  --page-text: #ffffff;
+  --accent-color: #45B7BA;
+  --dark-teal: #031821;
+  --dark-teal-light: #0b3b4e;
+  --dark-teal-lighter: #0d4a62;
+  --dark-teal-border: #1a4a5a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +29,13 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+/* Theme Classes */
+.dark-teal {
+  --page-bg: var(--dark-teal);
+  --page-text: #ffffff;
+  --accent-color: #45B7BA;
 }
 
 body {

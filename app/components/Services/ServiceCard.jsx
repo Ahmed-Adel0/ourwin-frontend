@@ -1,6 +1,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ServiceCard = ({ data }) => {
   return (
@@ -32,9 +33,28 @@ const ServiceCard = ({ data }) => {
         ))}
       </ul>
 
-      <p className="text-[#45B7BA] text-base md:text-lg font-extrabold pt-4 border-t border-white/10">
-        STARTS FROM {data.price}
-      </p>
+      <div className="text-center">
+                <Link 
+                  href={`/services/${data.id}`}
+                  className="inline-flex items-center text-[#45B7BA] font-medium group"
+                >
+                  READ MORE
+                  <svg 
+                    className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                    />
+                  </svg>
+                </Link>
+              </div>
     </div>
   );
 };
