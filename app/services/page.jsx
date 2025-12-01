@@ -1,61 +1,263 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import FAQSection from "../components/FAQSection";
 import SectionWrapper from "../components/SectionWrapper";
+import ServiceWithProjects from "../components/Services/ServiceWithProjects";
 
-const services = [
+// Sample projects data - يمكن استبدالها ببيانات حقيقية من API أو CMS
+const sampleProjects = {
+  "DIGITAL MARKETING": [
+    {
+      id: 1,
+      title: "Social Media Campaign",
+      imageUrl: "/hands.webp",
+      link: "/projects/social-media-campaign",
+      slug: "social-media-campaign",
+    },
+    {
+      id: 2,
+      title: "SEO Optimization",
+      imageUrl: "/hands.webp",
+      link: "/projects/seo-optimization",
+      slug: "seo-optimization",
+    },
+    {
+      id: 3,
+      title: "Email Marketing",
+      imageUrl: "/hands.webp",
+      link: "/projects/email-marketing",
+      slug: "email-marketing",
+    },
+    {
+      id: 4,
+      title: "Content Strategy",
+      imageUrl: "/hands.webp",
+      link: "/projects/content-strategy",
+      slug: "content-strategy",
+    },
+  ],
+  "BRANDING & IDENTITY": [
+    {
+      id: 5,
+      title: "Brand Identity Design",
+      imageUrl: "/hands.webp",
+      link: "/projects/brand-identity",
+      slug: "brand-identity",
+    },
+    {
+      id: 6,
+      title: "Logo Design",
+      imageUrl: "/hands.webp",
+      link: "/projects/logo-design",
+      slug: "logo-design",
+    },
+    {
+      id: 7,
+      title: "Brand Guidelines",
+      imageUrl: "/hands.webp",
+      link: "/projects/brand-guidelines",
+      slug: "brand-guidelines",
+    },
+  ],
+  "MEDIA PRODUCTION": [
+    {
+      id: 8,
+      title: "Video Production",
+      imageUrl: "/hands.webp",
+      link: "/projects/video-production",
+      slug: "video-production",
+    },
+    {
+      id: 9,
+      title: "Motion Graphics",
+      imageUrl: "/hands.webp",
+      link: "/projects/motion-graphics",
+      slug: "motion-graphics",
+    },
+    {
+      id: 10,
+      title: "Animation Project",
+      imageUrl: "/hands.webp",
+      link: "/projects/animation",
+      slug: "animation",
+    },
+    {
+      id: 11,
+      title: "Post-Production",
+      imageUrl: "/hands.webp",
+      link: "/projects/post-production",
+      slug: "post-production",
+    },
+  ],
+  "PRINTING & COLLATERAL": [
+    {
+      id: 12,
+      title: "Business Cards",
+      imageUrl: "/hands.webp",
+      link: "/projects/business-cards",
+      slug: "business-cards",
+    },
+    {
+      id: 13,
+      title: "Brochure Design",
+      imageUrl: "/hands.webp",
+      link: "/projects/brochure",
+      slug: "brochure",
+    },
+    {
+      id: 14,
+      title: "Marketing Materials",
+      imageUrl: "/hands.webp",
+      link: "/projects/marketing-materials",
+      slug: "marketing-materials",
+    },
+  ],
+  "WEBSITE DEVELOPMENT": [
+    {
+      id: 15,
+      title: "Corporate Website",
+      imageUrl: "/hands.webp",
+      link: "/projects/corporate-website",
+      slug: "corporate-website",
+    },
+    {
+      id: 16,
+      title: "E-commerce Platform",
+      imageUrl: "/hands.webp",
+      link: "/projects/ecommerce",
+      slug: "ecommerce",
+    },
+    {
+      id: 17,
+      title: "Web Application",
+      imageUrl: "/hands.webp",
+      link: "/projects/web-app",
+      slug: "web-app",
+    },
+    {
+      id: 18,
+      title: "Business System",
+      imageUrl: "/hands.webp",
+      link: "/projects/business-system",
+      slug: "business-system",
+    },
+  ],
+  "EVENTS & EXHIBITIONS": [
+    {
+      id: 19,
+      title: "Brand Activation",
+      imageUrl: "/hands.webp",
+      link: "/projects/brand-activation",
+      slug: "brand-activation",
+    },
+    {
+      id: 20,
+      title: "Exhibition Design",
+      imageUrl: "/hands.webp",
+      link: "/projects/exhibition",
+      slug: "exhibition",
+    },
+    {
+      id: 21,
+      title: "Roadshow Event",
+      imageUrl: "/hands.webp",
+      link: "/projects/roadshow",
+      slug: "roadshow",
+    },
+  ],
+};
+
+const serviceData = [
   {
-    id: 1,
     title: "DIGITAL MARKETING",
-    description:
-      "We develop comprehensive digital marketing strategies to boost your online presence and drive targeted traffic to your business.",
+    price: "$1,500",
     icon: "/Services/DIGITAL MARKETING.svg",
+    description:
+      "Comprehensive digital marketing solutions including SEO optimization, social media management, content creation, media buying strategies, and automated email marketing campaigns.",
+    details: [
+      "SEO & Marketing",
+      "Social Media Management",
+      "Content Creation & Design",
+      "Media Buying & Strategy",
+      "Email Marketing & Automation",
+    ],
+    bookCallLink: "/contact",
   },
   {
-    id: 2,
     title: "BRANDING & IDENTITY",
-    description:
-      "We create powerful brand identities that resonate with your target audience and communicate your unique value proposition.",
+    price: "$2,500",
     icon: "/Services/BRANDING & IDENTITY.svg",
+    description:
+      "Complete brand identity development from strategic positioning and messaging to visual design, logo creation, and comprehensive brand guideline systems.",
+    details: [
+      "Brand Strategy & Positioning",
+      "Brand Messaging & Tone of Voice",
+      "Logo & Visual Identity Design",
+      "Brand Guidelines & Systems",
+    ],
+    bookCallLink: "/contact",
   },
   {
-    id: 3,
     title: "MEDIA PRODUCTION",
-    description:
-      "Our expert team produces high-quality video content that tells your brand's story in a compelling and engaging way.",
+    price: "$2,500",
     icon: "/Services/MEDIA PRODUCTION.svg",
+    description:
+      "Professional media production services covering video editing, post-production, live video production, 2D & 3D animation, and motion graphics.",
+    details: [
+      "Video Editing & Post-Production",
+      "Live Video Production",
+      "2D & 3D Animation",
+      "Motion Graphics",
+    ],
+    bookCallLink: "/contact",
   },
   {
-    id: 4,
     title: "PRINTING & COLLATERAL",
-    description:
-      "From business cards to banners, we deliver high-quality print materials that make a lasting impression.",
+    price: "$1,500",
     icon: "/Services/PRINTING & COLLATERAL.svg",
+    description:
+      "Creative printing solutions and marketing collateral including concept development, business cards, letterheads, flyers, brochures, and promotional materials.",
+    details: [
+      "Concept Development & Creative Direction",
+      "Business Cards, Letterheads, & Stationary",
+      "Flyers, Brochures, & Annual Reports",
+      "Posters, Banners, & Marketing Materials",
+    ],
+    bookCallLink: "/contact",
   },
   {
-    id: 5,
     title: "WEBSITE DEVELOPMENT",
-    description:
-      "We build responsive, user-friendly websites that convert visitors into customers and drive business growth.",
+    price: "$2,500",
     icon: "/Services/WEBSITE DEVELOPMENT.svg",
+    description:
+      "Full-stack web development services from corporate websites and e-commerce solutions to business management systems, interactive experiences, and UX/UI design.",
+    details: [
+      "Corporate & Business Websites",
+      "E-commerce Solutions",
+      "Business Management Systems",
+      "Interactive & Dynamic Web Experiences",
+      "Prototyping & Functional Design",
+      "UX/UI Design",
+    ],
+    bookCallLink: "/contact",
   },
   {
-    id: 6,
     title: "EVENTS & EXHIBITIONS",
-    description:
-      "We plan and execute memorable events and exhibitions that create meaningful connections with your audience.",
+    price: "$2,500",
     icon: "/Services/EVENTS & EXHIBITIONS.svg",
+    description:
+      "Comprehensive event management and exhibition services including brand activations, exhibition design, and roadshow coordination.",
+    details: ["Brand Activations", "Exhibitions", "Roadshows"],
+    bookCallLink: "/contact",
   },
 ];
 
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44">
+      <Navbar />
       <SectionWrapper>
-        <Navbar />
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
@@ -68,60 +270,19 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-0">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="bg-[var(--dark-teal-light)] rounded-xl p-6 sm:p-8 hover:bg-[var(--dark-teal-lighter)] transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl hover:shadow-teal-900/30"
-            >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[var(--dark-teal-light)] border border-[var(--dark-teal-border)] flex items-center justify-center mb-4 sm:mb-6 mx-auto">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-
-              <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-3 sm:mb-4">
-                {service.title}
-              </h3>
-
-              <p className="text-sm sm:text-base text-gray-300 text-center mb-4 sm:mb-6 leading-relaxed">
-                {service.description}
-              </p>
-
-              <div className="text-center">
-                <Link
-                  href={`/services/${service.id}`}
-                  className="inline-flex items-center text-[#45B7BA] font-medium group"
-                >
-                  READ MORE
-                  <svg
-                    className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+        {/* Services with Projects Sections */}
+        <div className="space-y-12 md:space-y-16 lg:space-y-20 mb-12 md:mb-16">
+          {serviceData.map((service, index) => (
+            <ServiceWithProjects
+              key={index}
+              service={service}
+              projects={sampleProjects[service.title] || []}
+            />
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="mt-12 sm:mt-16 md:mt-20 text-center px-4">
+        <div className="mt-12 sm:mt-16 md:mt-20 text-center px-4 pb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
             Ready to start your project?
           </h2>
@@ -129,12 +290,12 @@ export default function ServicesPage() {
             Get in touch with us today to discuss how we can help bring your
             vision to life.
           </p>
-          <Link
+          <a
             href="/contact"
             className="inline-block bg-[#45B7BA] hover:bg-[#3da2a4] text-white font-bold py-3 px-6 sm:px-8 rounded-full transition-colors duration-300 text-sm sm:text-base"
           >
             CONTACT US
-          </Link>
+          </a>
         </div>
       </SectionWrapper>
 

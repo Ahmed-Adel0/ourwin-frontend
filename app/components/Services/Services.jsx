@@ -1,4 +1,3 @@
-
 import SectionWrapper from "../SectionWrapper";
 import SectionHeader from "../SectionHeader";
 import ServiceCard from "./ServiceCard";
@@ -87,4 +86,3 @@ const Services = () => {
 };
 
 export default Services;
-
