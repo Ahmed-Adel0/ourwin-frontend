@@ -3,8 +3,14 @@ import Link from "next/link";
 // بيانات الروابط والقوائم
 const footerLinks = {
   Home: ["Why Us", "About Us", "Testimonials", "FAQ's"],
-  Services: ["Web Development", "App Development", "Web Design", "Digital Marketing"],
+  Services: [
+    "Web Development",
+    "App Development",
+    "Web Design",
+    "Digital Marketing",
+  ],
   Projects: ["Klothink", "Zenith", "Novus", "Apex"],
+  Company: [{ name: "Careers", url: "/career" }],
   Blogs: [
     { name: "Business", status: "" },
     { name: "Design", status: "Soon" },

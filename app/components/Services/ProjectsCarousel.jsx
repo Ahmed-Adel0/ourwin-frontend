@@ -81,7 +81,7 @@ const ProjectsCarousel = ({
   }
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative bg-gradient-to-r from-[#02141f] via-[#031c29] to-[#02141f] rounded-2xl border border-[#45B7BA]/20 px-4 sm:px-5 md:px-6 py-5 sm:py-6 shadow-[0_18px_60px_rgba(0,0,0,0.8)]">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
@@ -180,7 +180,7 @@ const ProjectsCarousel = ({
           <button
             onClick={() => scroll("right")}
             onMouseEnter={checkScrollability}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#2C2C2C] border border-white/10 hover:border-[#00FFC2]/50 text-white flex items-center justify-center transition-all hover:bg-[#00FFC2]/10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#0b253b] border border-[#45B7BA]/30 hover:border-[#45B7BA] text-white flex items-center justify-center transition-all hover:bg-[#45B7BA]/10"
             aria-label="Scroll right"
           >
             <svg
