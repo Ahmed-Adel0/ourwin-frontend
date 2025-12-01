@@ -111,19 +111,23 @@ const ProjectsShowcase = () => {
 
         {/* Filter Navbar */}
         <div className="mb-6 sm:mb-8 flex flex-wrap gap-2 sm:gap-3 justify-center md:justify-start px-2 sm:px-0">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
-                selectedCategory === category
-                  ? "bg-[#45B7BA] text-[#052636] shadow-lg shadow-[#45B7BA]/30"
-                  : "bg-[var(--dark-teal-light)] text-white hover:bg-[var(--dark-teal-lighter)] border border-white/10"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+          {categories.map((category) => {
+            const isActive = selectedCategory === category;
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setSelectedCategory(category)}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#45B7BA]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--dark-teal)] ${
+                  isActive
+                    ? "bg-[#45B7BA] text-[#052636] shadow-lg shadow-[#45B7BA]/30"
+                    : "bg-[var(--dark-teal-light)] text-white hover:bg-[var(--dark-teal-lighter)] border border-white/10 hover:border-[#45B7BA]/60 hover:shadow-md hover:shadow-[#45B7BA]/25"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
         </div>
 
         {/* Projects Grid - Normal Grid Layout with Smaller Cards */}

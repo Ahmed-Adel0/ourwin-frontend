@@ -24,7 +24,8 @@ export default function FAQSection() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at nibh vitae urna tincidunt efficitur et sed nibh.",
     },
     {
-      question: "How do you ensure cross-platform compatibility for mobile apps?",
+      question:
+        "How do you ensure cross-platform compatibility for mobile apps?",
       answer:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, nisl id ultrices malesuada, purus justo lobortis nisl, non bibendum nisl leo sed arcu.",
     },
@@ -40,7 +41,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-black py-20 px-4 md:px-6">
+    <section className="w-full bg-black pt-5 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title="Frequently Asked Questions"
@@ -83,7 +84,9 @@ export default function FAQSection() {
                     </div>
                     <span
                       className={`ml-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-sm font-bold transition-all ${
-                        isOpen ? "bg-white text-black" : "bg-transparent text-white"
+                        isOpen
+                          ? "bg-white text-black"
+                          : "bg-transparent text-white"
                       }`}
                     >
                       {isOpen ? "-" : "+"}

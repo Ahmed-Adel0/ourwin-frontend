@@ -9,7 +9,7 @@ import CopyrightBar from "./CopyrightBar";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white pt-16 mt-16">
+    <footer className="w-full bg-black text-white pt-10 mt-10">
       {/* حاوية المحتوى الرئيسي */}
       <div className="container mx-auto px-4 max-w-7xl">
         {/* الصف العلوي: السوشيال ميديا + الروابط في بطاقة واحدة كبيرة على اليمين */}

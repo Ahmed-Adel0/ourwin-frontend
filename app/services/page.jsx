@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar/Navbar";
@@ -54,7 +53,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[var(--dark-teal)] pt-24 sm:pt-32 md:pt-40 lg:pt-44">
+    <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44">
       <SectionWrapper>
         <Navbar />
         {/* Hero Section */}

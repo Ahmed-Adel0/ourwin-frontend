@@ -1,5 +1,4 @@
 import SectionWrapper from "../SectionWrapper";
-import SectionHeader from "../SectionHeader";
 import Link from "next/link";
 import {
   ClipboardDocumentCheckIcon,
@@ -35,42 +34,100 @@ const featuresData = [
   },
 ];
 
+/**
+ * Reusable number circle used for both mobile and desktop badges.
+ * Keeps visual styling consistent in one place.
+ */
+const NumberCircle = ({ label, className }) => (
+  <div className={className}>
+    <span className="text-sm md:text-base lg:text-lg font-bold text-[#45B7BA]">
+      {label}
+    </span>
+  </div>
+);
+
 const ProjectsKeyFeatures = () => {
   return (
-    <section className="w-full bg-[var(--dark-teal)] py-12 sm:py-16 md:py-20 px-4 md:px-6">
+    <section className="w-full bg-[var(--dark-teal)] py-12 sm:py-16 md:py-5 px-4 md:px-6">
       <SectionWrapper id="key-features-section">
-        {/* Header bar */}
-        <SectionHeader title="KEY FEATURES OF OUR PROJECTS" />
+        {/* Creative Section Header */}
+        <div className="mb-10 sm:mb-14 md:mb-16 text-center lg:text-left">
+          <p className="text-xs sm:text-sm tracking-[0.25em] text-[#7CE1E4]/80 uppercase mb-3">
+            PROJECT BLUEPRINT
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+            <span className="block text-white drop-shadow-[0_0_25px_rgba(0,0,0,0.7)]">
+              KEY FEATURES
+            </span>
+            <span className="mt-2 inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#45B7BA] via-[#2F8FA0] to-[#006781]">
+              OF OUR PROJECTS
+            </span>
+          </h1>
+          <p className="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl mx-auto lg:mx-0">
+            A clear, strategic flow that connects every project milestone with
+            measurable outcomes and a memorable visual story.
+          </p>
+        </div>
 
         {/* Staggered/Zigzag Layout - Creative Staircase Design */}
-        <div className="space-y-6 sm:space-y-8 md:space-y-12">
+        <div className="space-y-10 sm:space-y-12 md:space-y-16">
           {featuresData.map((feature, index) => {
             const IconComponent = feature.icon;
             // Alternate alignment: even = left, odd = right (staggered effect)
             const isEven = index % 2 === 0;
-            const isLast = index === featuresData.length - 1;
+            const label = String(index + 1).padStart(2, "0");
 
             return (
               <div
                 key={index}
-                className={`relative group flex flex-col md:${
+                className={`relative group flex flex-col lg:${
                   isEven ? "flex-row" : "flex-row-reverse"
                 } items-center gap-4 sm:gap-6 md:gap-8`}
               >
                 {/* Feature Card */}
                 <div
-                  className={`relative w-full md:w-[60%] lg:w-[55%] ${
-                    isEven ? "md:ml-0" : "md:mr-0"
+                  className={`relative w-full pt-15 lg:w-[60%] xl:w-[55%] ${
+                    isEven ? "lg:ml-80" : "lg:mr-80"
                   } ${
                     isEven && index > 0
-                      ? "md:translate-x-4 lg:translate-x-8"
+                      ? "lg:translate-x-4 xl:translate-x-8"
                       : ""
                   } ${
                     !isEven && index > 0
-                      ? "md:-translate-x-4 lg:-translate-x-8"
+                      ? "lg:-translate-x-4 xl:-translate-x-8"
                       : ""
                   } transition-all duration-500 hover:scale-[1.02]`}
                 >
+                  {/* Mobile / Tablet Number Circle Above Card */}
+                  <div className="absolute -top-0 left-1/2 -translate-x-1/2 flex flex-col items-center lg:hidden">
+                    <NumberCircle
+                      label={label}
+                      className="w-10 h-10 rounded-full bg-[#053447] flex items-center justify-center shadow-xl shadow-black/40 shadow-[0_0_15px_rgba(69,183,186,0.25)] border border-[#45B7BA]/20"
+                    />
+                    <div className="w-px h-6 bg-gradient-to-b from-[#45B7BA]/60 via-[#45B7BA]/30 to-transparent" />
+                  </div>
+
+                  {/* Desktop Number Circle Beside Card */}
+                  {isEven ? (
+                    // Even index: circle على يسار الكارت، السهم يشير لليمين (ناحية الكارت)
+                    <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -left-28 items-center gap-4">
+                      <NumberCircle
+                        label={label}
+                        className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-[#053447] flex items-center justify-center shadow-xl shadow-black/40 shadow-[0_0_15px_rgba(69,183,186,0.35)] border border-[#45B7BA]/30"
+                      />
+                      <div className="w-10 h-px bg-gradient-to-r from-transparent via-[#45B7BA]/60 to-[#45B7BA]" />
+                    </div>
+                  ) : (
+                    // Odd index: circle على يمين الكارت، السهم يشير لليسار (ناحية الكارت)
+                    <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-28 items-center gap-4">
+                      <div className="w-10 h-px bg-gradient-to-l from-transparent via-[#45B7BA]/60 to-[#45B7BA]" />
+                      <NumberCircle
+                        label={label}
+                        className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-[#053447] flex items-center justify-center shadow-xl shadow-black/40 shadow-[0_0_15px_rgba(69,183,186,0.35)] border border-[#45B7BA]/30"
+                      />
+                    </div>
+                  )}
+
                   <div className="bg-[#053447] rounded-2xl px-4 sm:px-6 py-6 sm:py-8 flex flex-col justify-between text-white shadow-xl shadow-black/40 hover:shadow-[#45B7BA]/20 hover:border-[#45B7BA]/30 border border-[var(--dark-teal)]/50 transition-all duration-300 h-full">
                     <div>
                       {/* Icon */}
@@ -100,35 +157,6 @@ const ProjectsKeyFeatures = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Decorative Element / Number Indicator */}
-                <div
-                  className={`hidden md:flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 ${
-                    isEven ? "md:order-2" : "md:order-1"
-                  }`}
-                >
-                  <div className="relative">
-                    {/* Number Circle */}
-                    <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-[#45B7BA] to-[#006781] flex items-center justify-center shadow-lg shadow-[#45B7BA]/30 border-4 border-[var(--dark-teal)]">
-                      <span className="text-xl md:text-2xl lg:text-3xl font-extrabold text-white">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    {/* Connecting Line (except for last item) */}
-                    {!isLast && (
-                      <div
-                        className={`absolute top-full left-1/2 -translate-x-1/2 w-0.5 h-12 md:h-16 bg-gradient-to-b from-[#45B7BA] to-transparent ${
-                          isEven ? "rotate-[-15deg]" : "rotate-[15deg]"
-                        }`}
-                      />
-                    )}
-                  </div>
-                </div>
-
-                {/* Spacer for even items to push to right */}
-                {isEven && index < featuresData.length - 1 && (
-                  <div className="hidden md:block w-[20%] lg:w-[30%]" />
-                )}
               </div>
             );
           })}
