@@ -2,7 +2,12 @@ import Link from "next/link";
 
 // بيانات الروابط والقوائم
 const footerLinks = {
-  Home: ["Why Us", "About Us", "Testimonials", "FAQ's"],
+  Home: [
+    "Why Us",
+    { name: "About Us", url: "/about" },
+    "Testimonials",
+    "FAQ's",
+  ],
   Services: [
     "Web Development",
     "App Development",
@@ -11,11 +16,7 @@ const footerLinks = {
   ],
   Projects: ["Klothink", "Zenith", "Novus", "Apex"],
   Company: [{ name: "Careers", url: "/career" }],
-  Blogs: [
-    { name: "Business", status: "" },
-    { name: "Design", status: "Soon" },
-    { name: "Development", status: "Soon" },
-  ],
+  blogs: [{ name: "Blogs", url: "/blogs" }],
 };
 
 const FooterLinkColumns = () => {

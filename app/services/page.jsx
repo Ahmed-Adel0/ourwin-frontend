@@ -257,47 +257,32 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44">
       <Navbar />
-      <SectionWrapper>
-        {/* Hero Section */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-            Our <span className="text-[#45B7BA]">Services</span>
-          </h1>
-          <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-[#45B7BA] to-[#006781] mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-4">
-            We offer a comprehensive range of digital solutions to help your
-            business thrive in the digital landscape.
-          </p>
-        </div>
+      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+        <SectionWrapper>
+          {/* Hero Section */}
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+              Our <span className="text-[#45B7BA]">Services</span>
+            </h1>
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-[#45B7BA] to-[#006781] mx-auto mb-6 sm:mb-8"></div>
+            <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-4">
+              We offer a comprehensive range of digital solutions to help your
+              business thrive in the digital landscape.
+            </p>
+          </div>
 
-        {/* Services with Projects Sections */}
-        <div className="space-y-12 md:space-y-16 lg:space-y-20 mb-12 md:mb-16">
-          {serviceData.map((service, index) => (
-            <ServiceWithProjects
-              key={index}
-              service={service}
-              projects={sampleProjects[service.title] || []}
-            />
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-12 sm:mt-16 md:mt-20 text-center px-4 pb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
-            Ready to start your project?
-          </h2>
-          <p className="text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
-            Get in touch with us today to discuss how we can help bring your
-            vision to life.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-[#45B7BA] hover:bg-[#3da2a4] text-white font-bold py-3 px-6 sm:px-8 rounded-full transition-colors duration-300 text-sm sm:text-base"
-          >
-            CONTACT US
-          </a>
-        </div>
-      </SectionWrapper>
+          {/* Services with Projects Sections */}
+          <div className="space-y-12 md:space-y-16 lg:space-y-20 mb-12 md:mb-16">
+            {serviceData.map((service, index) => (
+              <ServiceWithProjects
+                key={index}
+                service={service}
+                projects={sampleProjects[service.title] || []}
+              />
+            ))}
+          </div>
+        </SectionWrapper>
+      </section>
 
       {/* FAQ Section */}
       <FAQSection />

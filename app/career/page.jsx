@@ -58,8 +58,8 @@ const CareerPage = () => {
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44 text-white">
       <Navbar />
 
-      <section className="w-full px-4 md:px-6 pb-16 md:pb-20 lg:pb-24">
-        <SectionWrapper maxW="max-w-6xl">
+      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+        <SectionWrapper>
           {/* Hero / Header */}
           <div className="mb-10 sm:mb-12 md:mb-14">
             <div className="rounded-3xl bg-gradient-to-r from-[#006781] via-[#45B7BA] to-[#0b253b] px-6 sm:px-8 md:px-10 py-6 sm:py-7 md:py-8 shadow-[0_28px_80px_rgba(0,0,0,0.75)]">
@@ -67,7 +67,8 @@ const CareerPage = () => {
                 JOIN OUR TEAM AT OUTWIN
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-black/90 max-w-2xl">
-                Help us craft bold digital experiences for brands around the world.
+                Help us craft bold digital experiences for brands around the
+                world.
               </p>
             </div>
           </div>
@@ -157,7 +158,6 @@ const CareerPage = () => {
                     </h3>
                   </div>
                   <div className="px-4 sm:px-5 py-3 sm:py-4 text-[11px] sm:text-xs text-gray-300 leading-relaxed">
-                    {/* يمكن استبدال هذا النص لاحقاً بنصوص أكثر دقة */}
                     <p>
                       Follow this step carefully to ensure your application is
                       complete and stands out to our hiring team.

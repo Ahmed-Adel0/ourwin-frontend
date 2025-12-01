@@ -5,6 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Clients", href: "/clients" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "About us", href: "/about" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,20 +32,13 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-2 items-center">
-          {[
-            "Home",
-            "Services",
-            "Projects",
-            "Clients",
-            "Portfolio",
-            "About us",
-          ].map((item) => (
-            <li key={item}>
+          {navItems.map((item) => (
+            <li key={item.label}>
               <Link
-                href={`/${item.toLowerCase()}`}
+                href={item.href}
                 className="block bg-[#052636] text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-[#0d3547] transition-colors duration-300"
               >
-                {item}
+                {item.label}
               </Link>
             </li>
           ))}
@@ -66,21 +68,14 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute top-20 left-4 right-4 bg-linear-to-r from-[#04364A] to-[#64CCC5] rounded-2xl p-4 shadow-lg lg:hidden">
           <ul className="flex flex-col gap-3">
-            {[
-              "Home",
-              "Services",
-              "Projects",
-              "Clients",
-              "Portfolio",
-              "About us",
-            ].map((item) => (
-              <li key={item}>
+            {navItems.map((item) => (
+              <li key={item.label}>
                 <Link
-                  href={`/${item.toLowerCase()}`}
+                  href={item.href}
                   className="block bg-[#052636] text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-[#0d3547] transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               </li>
             ))}
