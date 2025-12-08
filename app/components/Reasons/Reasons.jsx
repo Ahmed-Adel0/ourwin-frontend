@@ -47,18 +47,6 @@ const Reasons = () => {
                   {reason.description}
                 </p>
               </div>
-
-              <div className="mt-8 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-black/40">
-                  <span className="text-white text-lg">↗</span>
-                </div>
-                <Link
-                  href="#"
-                  className="text-sm md:text-base font-medium text-white hover:text-[#45B7BA] transition-colors"
-                >
-                  Learn More
-                </Link>
-              </div>
             </div>
           ))}
         </div>

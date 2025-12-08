@@ -43,20 +43,7 @@ export default function FAQSection() {
   return (
     <section className="w-full bg-black pt-5 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader
-          title="Frequently Asked Questions"
-          rightNode={
-            <Link
-              href="/faq"
-              className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase hover:text-white/80 transition-colors"
-            >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/40">
-                ↗
-              </span>
-              <span className="opacity-80">View All</span>
-            </Link>
-          }
-        />
+        <SectionHeader title="Frequently Asked Questions" />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_minmax(0,1fr)] gap-8">
           <div className="space-y-4">

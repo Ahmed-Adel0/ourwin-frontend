@@ -1,6 +1,10 @@
+"use client";
+
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
+import AchievementsSection from "../components/Achievements/AchievementsSection";
+import AnimatedStatValue from "../components/AnimatedStatValue";
 
 const stats = [
   { label: "CLIENTS", value: "200+" },
@@ -60,17 +64,17 @@ const AboutPage = () => {
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44 text-white">
       <Navbar />
 
-      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+      <section className="w-full">
         <SectionWrapper>
           {/* Hero Row: Headline + Stats */}
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.2fr)] gap-6 md:gap-8 mb-14 md:mb-16">
             {/* Left: Big Statement */}
             <div className="bg-[#032131] rounded-3xl border border-[#45B7BA]/30 shadow-[0_26px_80px_rgba(0,0,0,0.85)] overflow-hidden">
               <div className="bg-gradient-to-r from-[#006781] via-[#45B7BA] to-[#0b253b] px-6 sm:px-8 md:px-10 py-5 sm:py-6 border-b border-white/10">
-                <p className="text-[11px] sm:text-xs tracking-[0.3em] text-black/80 uppercase mb-1">
+                <p className="text-[11px] sm:text-xs tracking-[0.3em] text-gray-100 uppercase mb-1">
                   ABOUT OUTWIN
                 </p>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-black">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-100">
                   ELEVATING BRANDS
                   <br />
                   IN THE DIGITAL AGE
@@ -91,13 +95,13 @@ const AboutPage = () => {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-[#03141f] rounded-2xl border border-[#45B7BA]/25 shadow-[0_18px_60px_rgba(0,0,0,0.9)] flex flex-col items-start justify-center px-4 sm:px-5 py-4 sm:py-5"
+                  className="bg-[#0b253b] rounded-2xl border border-[#45B7BA]/25 shadow-[0_18px_60px_rgba(0,0,0,0.9)] flex flex-col items-start justify-center px-4 sm:px-5 py-4 sm:py-5"
                 >
                   <p className="text-[11px] sm:text-xs tracking-[0.25em] text-[#64CCC5]/80 uppercase mb-1">
                     {stat.label}
                   </p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-extrabold">
-                    {stat.value}
+                    <AnimatedStatValue value={stat.value} duration={2000} />
                   </p>
                 </div>
               ))}
@@ -186,6 +190,9 @@ const AboutPage = () => {
               ))}
             </div>
           </section>
+
+          {/* Achievements Section */}
+          <AchievementsSection />
         </SectionWrapper>
       </section>
 

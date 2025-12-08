@@ -58,7 +58,7 @@ const CareerPage = () => {
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44 text-white">
       <Navbar />
 
-      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+      <section className="w-full">
         <SectionWrapper>
           {/* Hero / Header */}
           <div className="mb-10 sm:mb-12 md:mb-14">
@@ -78,7 +78,7 @@ const CareerPage = () => {
             {jobOpenings.map((job) => (
               <article
                 key={job.id}
-                className="bg-[#062131] rounded-2xl border border-[#45B7BA]/25 shadow-[0_20px_60px_rgba(0,0,0,0.75)] overflow-hidden flex flex-col"
+                className="bg-[#0b253b] rounded-2xl border border-[#45B7BA]/25 shadow-[0_20px_60px_rgba(0,0,0,0.75)] overflow-hidden flex flex-col"
               >
                 {/* Card Header */}
                 <div className="px-6 sm:px-7 pt-6 sm:pt-7 pb-4 flex items-start justify-between gap-4">
@@ -101,16 +101,6 @@ const CareerPage = () => {
                       </span>
                     </div>
                   </div>
-
-                  <Link
-                    href={`#${job.id}`}
-                    className="inline-flex items-center text-[#45B7BA] text-xs sm:text-sm font-semibold tracking-wide hover:text-white transition-colors group"
-                  >
-                    VIEW DETAILS
-                    <span className="ml-1.5 text-sm group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
-                      ↗
-                    </span>
-                  </Link>
                 </div>
 
                 {/* Skills / Body */}
@@ -149,7 +139,7 @@ const CareerPage = () => {
                   key={step}
                   className="bg-[#050c12] rounded-2xl border border-[#1a2a35] overflow-hidden shadow-[0_16px_50px_rgba(0,0,0,0.9)] flex flex-col"
                 >
-                  <div className="px-4 sm:px-5 pt-4 pb-3 bg-[#061824] border-b border-[#1a2a35]">
+                  <div className="px-4 sm:px-5 pt-4 pb-3 bg-[#0b253b] border-b border-[#1a2a35]">
                     <p className="text-[11px] sm:text-xs tracking-[0.25em] text-[#64CCC5]/80 uppercase mb-1">
                       Step {String(index + 1).padStart(2, "0")}
                     </p>

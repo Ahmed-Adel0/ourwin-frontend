@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
 import Link from "next/link";
 import Image from "next/image";
-import NewsletterForm from "../components/NewsletterForm";
+import FAQSection from "../components/FAQSection";
 
 const blogPosts = [
   {
@@ -57,7 +57,7 @@ const BlogsPage = () => {
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44 text-white">
       <Navbar />
 
-      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+      <section className="w-full">
         <SectionWrapper>
           {/* Header */}
           <div className="mb-8 sm:mb-10 md:mb-12">
@@ -83,7 +83,7 @@ const BlogsPage = () => {
             </article>
 
             {/* Featured Content */}
-            <article className="bg-[#062131] rounded-2xl border border-[#45B7BA]/25 shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-7 md:p-8 flex flex-col justify-between">
+            <article className="bg-[#0b253b] rounded-2xl border border-[#45B7BA]/25 shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-7 md:p-8 flex flex-col justify-between">
               <div>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mb-4">
                   {featured.title}
@@ -123,7 +123,7 @@ const BlogsPage = () => {
             {others.map((post) => (
               <article
                 key={post.slug}
-                className="bg-[#062131] rounded-2xl border border-[#45B7BA]/20 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col"
+                className="bg-[#0b253b] rounded-2xl border border-[#45B7BA]/20 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col"
               >
                 <div className="relative w-full aspect-[4/3]">
                   <Image
@@ -156,27 +156,9 @@ const BlogsPage = () => {
               </article>
             ))}
           </div>
-
-          {/* Form Section */}
-          <section className="mb-10 md:mb-12">
-            <div className="rounded-3xl bg-[#03141f] border border-[#45B7BA]/30 shadow-[0_20px_70px_rgba(0,0,0,0.85)] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-1/2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3">
-                  Stay ahead with our insights
-                </h2>
-                <p className="text-sm sm:text-base text-gray-300">
-                  Subscribe to receive curated articles about design, branding,
-                  and digital strategy straight to your inbox.
-                </p>
-              </div>
-              <div className="md:w-1/2 w-full">
-                <NewsletterForm />
-              </div>
-            </div>
-          </section>
         </SectionWrapper>
       </section>
-
+      <FAQSection />
       <Footer />
     </main>
   );

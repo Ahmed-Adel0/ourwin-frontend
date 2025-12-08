@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function AnimatedCounter({ value, duration = 2000 }) {
   const [count, setCount] = useState(0);
@@ -11,7 +11,7 @@ export default function AnimatedCounter({ value, duration = 2000 }) {
       setHasStarted(true);
       const increment = value / (duration / 16);
       let current = 0;
-      
+
       const timer = setInterval(() => {
         current += increment;
         if (current >= value) {

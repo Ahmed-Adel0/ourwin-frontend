@@ -1,33 +1,32 @@
 import Link from "next/link";
-
-// الألوان المستخدمة:
-// لون خلفية مربعات السوشيال ميديا: #185E73 (لون أزرق داكن)
+import { FaInstagram, FaLinkedin, FaTiktok, FaBehance } from "react-icons/fa";
 
 const socialMedia = [
   {
     platform: "INSTAGRAM",
-    icon: "📷",
+    icon: FaInstagram,
     url: "#",
-    description: "Share visually appealing snippets of our latest web projects.",
+    description:
+      "Share visually appealing snippets of our latest web projects.",
     bg: "#185E73",
   },
   {
-    platform: "TWITTER",
-    icon: "🐦",
+    platform: "LINKEDIN",
+    icon: FaLinkedin,
     url: "#",
-    description: "Tweet about interesting coding challenges you’ve overcome.",
+    description: "Connect with us on LinkedIn.",
     bg: "#185E73",
   },
   {
-    platform: "DRIBBBLE",
-    icon: "⚪",
+    platform: "TIKTOK",
+    icon: FaTiktok,
     url: "#",
-    description: "Showcase design elements of our web projects.",
+    description: "Connect with us on TikTok.",
     bg: "#185E73",
   },
   {
     platform: "BEHANCE",
-    icon: "🖹",
+    icon: FaBehance,
     url: "#",
     description: "Create detailed presentations for our projects.",
     bg: "#185E73",
@@ -36,21 +35,26 @@ const socialMedia = [
 
 const SocialMediaCards = () => {
   return (
-    <div className="grid grid-cols-2 gap-4 col-span-1 md:col-span-1">
+    <div className="grid grid-cols-2 gap-4 col-span-1 md:col-span-1 items-stretch">
       {socialMedia.map((item, index) => (
         <Link
           href={item.url}
           key={index}
           target="_blank"
-          className="p-4 rounded-xl shadow-lg border border-white/5 transition-all duration-300 hover:scale-[1.03] hover:border-[#45B7BA] flex flex-col justify-between"
+          className="h-full min-h-[140px] p-4 rounded-xl shadow-lg border border-white/5 transition-all duration-300 hover:scale-[1.03] hover:border-[#45B7BA] flex flex-col justify-between"
           style={{ backgroundColor: item.bg }}
         >
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-xl">{item.icon}</span>
-            <span className="text-xl">↗</span>
+          <div className="shrink-0 mb-3">
+            <item.icon className="w-6 h-6" />
           </div>
-          <h3 className="text-lg font-bold mb-1">{item.platform}</h3>
-          <p className="text-xs text-gray-200">{item.description}</p>
+          <div className="grow flex flex-col justify-end">
+            <h3 className="text-lg font-bold mb-2 leading-tight">
+              {item.platform}
+            </h3>
+            <p className="text-xs text-gray-200 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
         </Link>
       ))}
     </div>
