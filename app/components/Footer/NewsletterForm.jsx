@@ -5,8 +5,12 @@ const NewsletterForm = () => {
     <div className="bg-[#185E73] p-6 rounded-xl shadow-lg mb-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div>
-          <h4 className="text-sm font-semibold text-white/70 uppercase mb-1">NEWSLETTER</h4>
-          <h3 className="text-xl font-bold uppercase">SUBSCRIBE TO OUR NEWSLETTER</h3>
+          <h4 className="text-sm font-semibold text-white/70 uppercase mb-1">
+            NEWSLETTER
+          </h4>
+          <h3 className="text-xl font-bold uppercase">
+            SUBSCRIBE TO OUR NEWSLETTER
+          </h3>
         </div>
         <div className="flex">
           <input

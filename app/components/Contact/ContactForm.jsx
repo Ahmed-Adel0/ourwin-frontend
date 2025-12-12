@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import logger from "@/lib/logger";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,7 +51,7 @@ const ContactForm = () => {
       setStatusMessage("Message sent successfully!");
       event.currentTarget.reset();
     } catch (error) {
-      console.error(error);
+      logger.error("Contact form submission error:", error);
       setStatusType("error");
       setStatusMessage("Failed to send message. Please try again.");
     } finally {
@@ -69,7 +70,7 @@ const ContactForm = () => {
             type="text"
             name="firstName"
             placeholder="Enter First Name"
-            className="w-full bg-black border border-[#1f2a30] rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-[#45B7BA]"
+            className="w-full bg-black border border-dark-teal-border rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
         <div>
@@ -80,7 +81,7 @@ const ContactForm = () => {
             type="text"
             name="lastName"
             placeholder="Enter Last Name"
-            className="w-full bg-black border border-[#1f2a30] rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-[#45B7BA]"
+            className="w-full bg-black border border-dark-teal-border rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
       </div>
@@ -95,7 +96,7 @@ const ContactForm = () => {
             name="email"
             placeholder="Enter your Email"
             required
-            className="w-full bg-black border border-[#1f2a30] rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-[#45B7BA]"
+            className="w-full bg-black border border-dark-teal-border rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
         <div>
@@ -106,7 +107,7 @@ const ContactForm = () => {
             type="tel"
             name="phone"
             placeholder="Enter Phone Number"
-            className="w-full bg-black border border-[#1f2a30] rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-[#45B7BA]"
+            className="w-full bg-black border border-dark-teal-border rounded-md px-3 py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
       </div>
@@ -138,7 +139,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#45B7BA] text-black text-xs sm:text-sm font-semibold tracking-wide hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
+          className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-accent text-black text-xs sm:text-sm font-semibold tracking-wide hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
         >
           {isSubmitting ? "SENDING..." : "SEND YOUR MESSAGE ↗"}
         </button>
