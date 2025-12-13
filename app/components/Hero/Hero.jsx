@@ -19,21 +19,27 @@ const Hero = () => {
         <SectionWrapper>
           <div className="relative z-10 text-white max-w-4xl">
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight">
-              DIGITAL SOLUTIONS{" "}
-              <span className="text-[#45B7BA]">THAT DRIVE SUCCESS</span>
+              Digital Solutions{" "}
+              <span className="text-[#45B7BA]">Built for Growth</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-300 mb-10 max-w-3xl">
-              At Outwin, we believe in the transformative power of digital
-              solutions. Our team of experts is dedicated to helping businesses
-              like yours thrive in the fast-paced digital landscape.
+              At Outwin, we craft digital experiences that don’t just look good — they drive measurable results.
+              <br />
+From marketing and branding to production and development, we help businesses grow with clarity, strategy, and confidence.
             </p>
 
-            <div className="flex md:block justify-center md:justify-start">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link
                 href="/services"
                 className="w-auto text-center bg-[#45B7BA] text-[#052636] font-bold py-4 px-8 rounded-lg text-lg hover:bg-[#2c989c] transition-colors duration-300 shadow-xl"
               >
                 Start Your Project
+              </Link>
+              <Link
+                href="/projects"
+                className="w-auto text-center bg-transparent border-2 text-white font-bold py-3.5 px-8 rounded-lg text-lg hover:bg-[#45B7BA]/10 transition-colors duration-300 shadow-xl"
+              >
+                Discover Our Work
               </Link>
             </div>
           </div>

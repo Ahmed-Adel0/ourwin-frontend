@@ -174,7 +174,8 @@ const serviceData = [
     price: "$1,500",
     icon: "/Services/DIGITAL MARKETING.svg",
     description:
-      "Comprehensive digital marketing solutions including SEO optimization, social media management, content creation, media buying strategies, and automated email marketing campaigns.",
+"We build full-funnel digital strategies that drive measurable growth. From social media management and content creation to media buying, SEO, and email automation — Outwin delivers performance-first marketing designed to increase leads, sales, and brand visibility."    
+    ,
     details: [
       "SEO & Marketing",
       "Social Media Management",
@@ -189,7 +190,7 @@ const serviceData = [
     price: "$2,500",
     icon: "/Services/BRANDING & IDENTITY.svg",
     description:
-      "Complete brand identity development from strategic positioning and messaging to visual design, logo creation, and comprehensive brand guideline systems.",
+      "Your brand is more than a logo — it’s your voice, story, and market presence. We craft clear brand strategies, visual identities, messaging systems, and complete brand guidelines that position you as a premium, trusted name in your industry.",
     details: [
       "Brand Strategy & Positioning",
       "Brand Messaging & Tone of Voice",
@@ -203,7 +204,7 @@ const serviceData = [
     price: "$2,500",
     icon: "/Services/MEDIA PRODUCTION.svg",
     description:
-      "Professional media production services covering video editing, post-production, live video production, 2D & 3D animation, and motion graphics.",
+      "High-quality visuals that move people and elevate brands. We produce creative video content, motion graphics, animations, and full post-production services designed to boost engagement and communicate your message with impact.",
     details: [
       "Video Editing & Post-Production",
       "Live Video Production",
@@ -217,7 +218,7 @@ const serviceData = [
     price: "$1,500",
     icon: "/Services/PRINTING & COLLATERAL.svg",
     description:
-      "Creative printing solutions and marketing collateral including concept development, business cards, letterheads, flyers, brochures, and promotional materials.",
+      "Your offline presence matters as much as your digital one. We design and produce premium printed materials: business cards, stationery, brochures, reports, banners, packaging, and every asset your brand needs to represent itself professionally.",
     details: [
       "Concept Development & Creative Direction",
       "Business Cards, Letterheads, & Stationary",
@@ -231,7 +232,7 @@ const serviceData = [
     price: "$2,500",
     icon: "/Services/WEBSITE DEVELOPMENT.svg",
     description:
-      "Full-stack web development services from corporate websites and e-commerce solutions to business management systems, interactive experiences, and UX/UI design.",
+      "We build modern, fast, and conversion-focused websites that turn visitors into customers. From corporate sites and e-commerce platforms to custom business systems, UX/UI design, and interactive digital experiences — we deliver websites built to scale.",
     details: [
       "Corporate & Business Websites",
       "E-commerce Solutions",
@@ -247,7 +248,7 @@ const serviceData = [
     price: "$2,500",
     icon: "/Services/EVENTS & EXHIBITIONS.svg",
     description:
-      "Comprehensive event management and exhibition services including brand activations, exhibition design, and roadshow coordination.",
+      "Create memorable brand experiences that connect with your audience. We handle brand activations, exhibitions, roadshows, booth design, and full event coordination to bring your brand to life in the real world.",
     details: ["Brand Activations", "Exhibitions", "Roadshows"],
     bookCallLink: "/contact",
   },
@@ -266,8 +267,7 @@ export default function ServicesPage() {
           </h1>
           <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-[#45B7BA] to-[#006781] mx-auto mb-6 sm:mb-8"></div>
           <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-4">
-            We offer a comprehensive range of digital solutions to help your
-            business thrive in the digital landscape.
+            We provide a full suite of integrated marketing services designed to elevate your brand and accelerate business growth.
           </p>
         </div>
 

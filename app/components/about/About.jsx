@@ -9,21 +9,29 @@ const About = () => {
         <div className="grid md:grid-cols-2 md:gap-6  items-center">
           <div className="order-2 md:order-1">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white">
-              WE ARE MORE THAN{" "}
-              <span className="text-[#45B7BA]">A MARKETING AGENCY</span>
+              We Don’t Just Build Brands — {" "}
+              <span className="text-[#45B7BA]">We Build Momentum.</span>
             </h2>
 
             <p className="mb-6 text-base text-gray-300 leading-relaxed">
-              OUTWIN IS A DIGITAL MARKETING AGENCY SPECIALIZING IN DIGITAL
-              MARKETING SERVICES, BRANDING, MEDIA PRODUCTION, CONTENT CREATION,
-              AND SOCIAL MEDIA MANAGEMENT, SEO AND WEB DESIGN.
+              Outwin is a full-scale marketing agency specializing in:
+Digital Marketing, Branding & Identity, Media Production, Content Creation, Social Media Management, SEO, and Web Development.
+
+We combine strategy, creativity, and performance to create solutions that move the needle — helping startups and SMEs scale, stand out, and lead in today’s competitive digital market.
+
+Whether you're launching a brand, boosting sales, or expanding to the Gulf market, our mission is simple:
+Deliver results. Every time.
             </p>
 
             <p className="mb-10 text-base text-gray-300 leading-relaxed">
-              OUR APPROACH IS ROOTED IN UNDERSTANDING YOUR VISION, DELIVERING
-              TAILORED SOLUTIONS, AND ENSURING YOUR BRAND THRIVES IN TODAY'S
-              COMPETITIVE DIGITAL LANDSCAPE. LET'S GROW TOGETHER AND TURN YOUR
-              GOALS INTO REALITY!
+              OUR APPROACH
+Your Vision Comes First — Always.
+
+We dive deep into your business goals, study your market, and craft tailored strategies that match your ambitions.
+No templates. No guesswork.
+Just solutions designed to help your brand win.
+
+Let’s grow together — and turn your next milestone into reality.
             </p>
 
             <div className="flex md:block justify-center md:justify-start">

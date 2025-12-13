@@ -75,17 +75,14 @@ const AboutPage = () => {
                   ABOUT OUTWIN
                 </p>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-100">
-                  ELEVATING BRANDS
-                  <br />
-                  IN THE DIGITAL AGE
+                  Elevating Brands for a Digital - 
+                  First World
                 </h1>
               </div>
               <div className="px-6 sm:px-8 md:px-10 py-6 sm:py-7 text-sm sm:text-base text-gray-100 leading-relaxed">
                 <p>
-                  Outwin is a digital-first agency focused on building bold,
-                  measurable experiences across branding, web, and digital
-                  marketing. We bridge strategy, design, and technology to help
-                  ambitious brands stand out and scale with confidence.
+                  Outwin is a performance-driven ,marketing agency built to help ambitious brands grow, compete, and scale with confidence.
+We combine strategic thinking, powerful creative, and smart technology to deliver measurable impact across branding, digital marketing, and web experiences.
                 </p>
               </div>
             </div>

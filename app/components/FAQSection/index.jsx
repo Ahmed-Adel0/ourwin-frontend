@@ -9,31 +9,28 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "How long does it take to complete a web development project?",
+      question: "What makes Outwin different from other Marketing agencies?",
       answer:
-        "The timeline varies depending on the project's complexity and requirements. Our team strives to deliver on time while maintaining the highest quality standards.",
+        "Outwin combines strategic thinking, data-driven execution, and high-quality creative work. We focus on delivering measurable results — not just content — through clear KPIs, performance tracking, and continuous optimization.",
     },
     {
-      question: "Can you handle large-scale mobile app development projects?",
+      question: "How do you build a digital strategy for a new client?",
       answer:
-        "Yes, we can handle complex, large-scale mobile applications with multiple user roles, integrations, and custom features.",
+        "We start with a full audit: market analysis, competitor review, customer insights, and brand positioning. Then we build a tailored roadmap covering content, ads, web, SEO, and overall brand growth.",
     },
     {
-      question: "Can you integrate third-party APIs into our mobile app?",
+      question: "What industries does Outwin specialize in?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at nibh vitae urna tincidunt efficitur et sed nibh.",
-    },
+"We work with a wide range of sectors including: Restaurants, Real Estate, E-commerce, Corporate Brands, and Personal Brands. Each industry gets a customized strategy based on its market behavior."    },
     {
       question:
-        "How do you ensure cross-platform compatibility for mobile apps?",
+        "How long does it take to see real results?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, nisl id ultrices malesuada, purus justo lobortis nisl, non bibendum nisl leo sed arcu.",
-    },
+"While timelines vary based on industry and goals, most clients start seeing measurable improvements within 4–8 weeks through consistent optimization and data-driven execution."    },
     {
-      question: "What is your approach to user experience (UX) design?",
+      question: "Do you offer complete account management?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Praesent congue, sapien eget interdum congue, nisl risus faucibus mauris, a auctor purus mi sed leo.",
-    },
+"Yes — Outwin provides end-to-end services: Content creation, design, social media management, ads, branding, web development, and reporting. Everything is handled by a dedicated team to ensure consistency and high performance."    },
   ];
 
   const toggleFAQ = (index) => {

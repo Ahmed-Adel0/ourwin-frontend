@@ -43,11 +43,8 @@ const ContactPage = () => {
                   WITH US TODAY!
                 </h1>
                 <p className="text-sm sm:text-base text-gray-200 max-w-2xl">
-                  At Outwin, we value your inquiries, feedback, and
-                  collaborations. Whether you are interested in our digital
-                  services, have questions about our projects, or want to
-                  explore potential partnerships, we encourage you to reach out
-                  to our dedicated team.
+                  At Outwin, we believe every great project starts with a conversation.
+Whether you’re looking to grow your brand, launch a new campaign, or explore a strategic partnership, our team is ready to listen and deliver solutions tailored to your goals.
                 </p>
               </div>
             </div>

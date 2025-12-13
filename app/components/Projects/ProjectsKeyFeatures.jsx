@@ -64,8 +64,7 @@ const ProjectsKeyFeatures = () => {
             </span>
           </h1>
           <p className="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl mx-auto lg:mx-0">
-            A clear, strategic flow that connects every project milestone with
-            measurable outcomes and a memorable visual story.
+            A clear, strategic flow that connects every project milestone with measurable outcomes and a memorable visual story.
           </p>
         </div>
 

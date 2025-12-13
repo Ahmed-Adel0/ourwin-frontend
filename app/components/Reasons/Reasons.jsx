@@ -4,24 +4,24 @@ import Link from "next/link";
 
 const reasonsData = [
   {
-    title: "EXPERTISE IN CUTTING-EDGE TECHNOLOGIES",
+    title: "Mastery of Modern Technology",
     description:
-      "Outwin ensures your projects are powered by state-of-the-art technologies, guaranteeing innovation and future-proof solutions.",
+      "We use the latest tools and platforms to build future-ready solutions that keep your brand ahead of the competition.",
   },
   {
-    title: "PROVEN TRACK RECORD OF SUCCESS",
+    title: "Results You Can Count On",
     description:
-      "Outwin demonstrates a consistent ability to meet and exceed client expectations, providing reliable and effective web solutions tailored to diverse needs.",
+      "We don’t believe in luck — we believe in performance.Our approach is backed by proven frameworks and measurable outcomes.",
   },
   {
-    title: "CLIENT-CENTRIC APPROACH",
+    title: "A Client-First Partnership",
     description:
-      "At Outwin, we prioritize understanding our clients' unique requirements, fostering transparent communication throughout the development process.",
+      "We listen. We collaborate. We adapt.Your success is our top priority from day one.",
   },
   {
-    title: "DEDICATED TEAM OF PROFESSIONALS",
+    title: "A Team of Specialists, Not Generalists",
     description:
-      "Our professionals bring a wealth of expertise to the table, ensuring the delivery of top-notch, scalable, and secure web solutions for your business.",
+      "From marketers and designers to developers and media producers — every project is handled by experts dedicated to excellence.",
   },
 ];
 

@@ -8,11 +8,11 @@ const CTA = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-white">
           <div className="md:col-span-2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 leading-tight uppercase tracking-wide">
-              READY TO TRANSFORM YOUR DIGITAL PRESENCE?
+              Ready to Level Up Your Digital Presence?
             </h2>
             <p className="text-sm md:text-base text-white/80 max-w-2xl">
-              Take the first step towards digital success with Outwin by your side. Our team of experts is eager to craft
-              tailored solutions that drive growth for your business.
+              Let’s build something powerful together.
+Our team is ready to craft tailored, revenue-focused solutions that help your business grow faster — and smarter.
             </p>
           </div>
 
