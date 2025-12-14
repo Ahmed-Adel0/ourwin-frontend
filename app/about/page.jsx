@@ -5,6 +5,7 @@ import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
 import AchievementsSection from "../components/Achievements/AchievementsSection";
 import AnimatedStatValue from "../components/AnimatedStatValue";
+import SectionHeader from "../components/SectionHeader";
 
 const stats = [
   { label: "CLIENTS", value: "200+" },
@@ -61,58 +62,53 @@ const awards = [
 
 const AboutPage = () => {
   return (
-    <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44 text-white">
+    <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-40 text-white">
       <Navbar />
 
       <section className="w-full">
         <SectionWrapper>
-          {/* Hero Row: Headline + Stats */}
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.2fr)] gap-6 md:gap-8 mb-14 md:mb-16">
-            {/* Left: Big Statement */}
-            <div className="bg-[#032131] rounded-3xl border border-[#45B7BA]/30 shadow-[0_26px_80px_rgba(0,0,0,0.85)] overflow-hidden">
-              <div className="bg-gradient-to-r from-[#006781] via-[#45B7BA] to-[#0b253b] px-6 sm:px-8 md:px-10 py-5 sm:py-6 border-b border-white/10">
-                <p className="text-[11px] sm:text-xs tracking-[0.3em] text-gray-100 uppercase mb-1">
-                  ABOUT OUTWIN
-                </p>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-100">
-                  Elevating Brands for a Digital - 
-                  First World
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] gap-6 md:gap-8 mb-12 md:mb-16">
+            {/* Left: Get in touch block */}
+            <div className="bg-[#032131] rounded-3xl border border-[#45B7BA]/30 shadow-[0_26px_80px_rgba(0,0,0,0.85)] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                  Elevating Brands
+                  <br />
+                  <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#45B7BA] via-[#2F8FA0] to-[#006781]">
+                    for a Digital - First World
+                  </span>
                 </h1>
-              </div>
-              <div className="px-6 sm:px-8 md:px-10 py-6 sm:py-7 text-sm sm:text-base text-gray-100 leading-relaxed">
-                <p>
-                  Outwin is a performance-driven ,marketing agency built to help ambitious brands grow, compete, and scale with confidence.
-We combine strategic thinking, powerful creative, and smart technology to deliver measurable impact across branding, digital marketing, and web experiences.
+                <p className="text-sm sm:text-base text-gray-200 max-w-2xl">
+                  Outwin is a performance-driven ,marketing agency built to help
+                  ambitious brands grow, compete, and scale with confidence. We
+                  combine strategic thinking, powerful creative, and smart
+                  technology to deliver measurable impact across branding,
+                  digital marketing, and web experiences.
                 </p>
               </div>
             </div>
 
-            {/* Right: Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-5 self-stretch">
+            {/* Right: Stats */}
+            <div className="bg-gradient-to-br from-[#004861] via-[#007a8b] to-[#4fd1c5] rounded-3xl p-5 sm:p-6 md:p-7 shadow-[0_26px_80px_rgba(0,0,0,0.9)] grid grid-cols-2 gap-4 sm:gap-5 content-center">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-[#0b253b] rounded-2xl border border-[#45B7BA]/25 shadow-[0_18px_60px_rgba(0,0,0,0.9)] flex flex-col items-start justify-center px-4 sm:px-5 py-4 sm:py-5"
+                  className="bg-black/20 rounded-2xl border border-white/15 px-4 py-3 sm:px-5 sm:py-4 flex flex-col justify-center"
                 >
-                  <p className="text-[11px] sm:text-xs tracking-[0.25em] text-[#64CCC5]/80 uppercase mb-1">
+                  <p className="text-[10px] sm:text-xs tracking-[0.25em] text-white/80 uppercase mb-1">
                     {stat.label}
                   </p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-extrabold">
-                    <AnimatedStatValue value={stat.value} duration={2000} />
+                    {stat.value}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-
           {/* Team Section */}
           <section className="mb-16 md:mb-20">
             {/* Header bar */}
-            <div className="rounded-3xl bg-gradient-to-r from-[#006781] via-[#45B7BA] to-[#0b253b] px-6 sm:px-8 md:px-10 py-4 sm:py-5 shadow-[0_24px_80px_rgba(0,0,0,0.8)] mb-6 sm:mb-8">
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold tracking-wide">
-                MEET THE BRILLIANT MINDS BEHIND OUTWIN
-              </h2>
-            </div>
+            <SectionHeader title="MEET THE BRILLIANT MINDS BEHIND OUTWIN" />
 
             {/* Team grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
@@ -156,14 +152,9 @@ We combine strategic thinking, powerful creative, and smart technology to delive
               ))}
             </div>
           </section>
-
           {/* Awards Section */}
           <section>
-            <div className="rounded-3xl bg-gradient-to-r from-[#006781] via-[#45B7BA] to-[#0b253b] px-6 sm:px-8 md:px-10 py-4 sm:py-5 shadow-[0_24px_80px_rgba(0,0,0,0.8)] mb-6 sm:mb-8">
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold tracking-wide">
-                AWARDS & RECOGNITIONS
-              </h2>
-            </div>
+            <SectionHeader title="AWARDS & RECOGNITIONS" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
               {awards.map((award) => (
@@ -187,7 +178,6 @@ We combine strategic thinking, powerful creative, and smart technology to delive
               ))}
             </div>
           </section>
-
           {/* Achievements Section */}
           <AchievementsSection />
         </SectionWrapper>

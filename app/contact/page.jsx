@@ -33,18 +33,24 @@ const ContactPage = () => {
       <section className="w-full pb-16 md:pb-20 lg:pb-24">
         <SectionWrapper>
           {/* Top Row: Hero + Stats */}
+
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] gap-6 md:gap-8 mb-12 md:mb-16">
             {/* Left: Get in touch block */}
             <div className="bg-[#032131] rounded-3xl border border-[#45B7BA]/30 shadow-[0_26px_80px_rgba(0,0,0,0.85)] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
               <div>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 sm:mb-5">
-                  GET IN TOUCH
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                  Get In Touch
                   <br />
-                  WITH US TODAY!
+                  <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#45B7BA] via-[#2F8FA0] to-[#006781]">
+                    With Us Today!
+                  </span>
                 </h1>
                 <p className="text-sm sm:text-base text-gray-200 max-w-2xl">
-                  At Outwin, we believe every great project starts with a conversation.
-Whether you’re looking to grow your brand, launch a new campaign, or explore a strategic partnership, our team is ready to listen and deliver solutions tailored to your goals.
+                  At Outwin, we believe every great project starts with a
+                  conversation. Whether you’re looking to grow your brand,
+                  launch a new campaign, or explore a strategic partnership, our
+                  team is ready to listen and deliver solutions tailored to your
+                  goals.
                 </p>
               </div>
             </div>

@@ -29,18 +29,6 @@ const ServiceCardNew = ({ data }) => {
             {data.title}
           </h3>
         </div>
-
-        <Link
-          href={data.bookCallLink || "/contact"}
-          className="inline-flex items-center text-white hover:text-[#45B7BA] transition-colors group ml-3 flex-shrink-0"
-        >
-          <span className="text-[#45B7BA] mr-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-sm md:text-base">
-            ↗
-          </span>
-          <span className="text-xs md:text-sm font-medium whitespace-nowrap">
-            BOOK A CALL
-          </span>
-        </Link>
       </div>
 
       {/* Description */}
@@ -52,13 +40,6 @@ const ServiceCardNew = ({ data }) => {
           </>
         )}
       </p>
-
-      {/* Starting Price */}
-      <div className="mt-auto">
-        <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
-          STARTS FROM {data.price || "$0"}
-        </div>
-      </div>
     </div>
   );
 };

@@ -5,11 +5,18 @@ import FAQSection from "../components/FAQSection";
 import SectionWrapper from "../components/SectionWrapper";
 import ServiceWithProjects from "../components/Services/ServiceWithProjects";
 
+const stats = [
+  { label: "CLIENTS", value: "200+" },
+  { label: "PROJECTS", value: "280+" },
+  { label: "HAPPY CLIENTS", value: "100%" },
+  { label: "FOLLOWER", value: "420K" },
+];
+
 // Sample projects data - يمكن استبدالها ببيانات حقيقية من API أو CMS
 const sampleProjects = {
   "DIGITAL MARKETING": [
-  {
-    id: 1,
+    {
+      id: 1,
       title: "Social Media Campaign",
       imageUrl: "/hands.webp",
       link: "/projects/social-media-campaign",
@@ -171,11 +178,9 @@ const sampleProjects = {
 const serviceData = [
   {
     title: "DIGITAL MARKETING",
-    price: "$1,500",
     icon: "/Services/DIGITAL MARKETING.svg",
     description:
-"We build full-funnel digital strategies that drive measurable growth. From social media management and content creation to media buying, SEO, and email automation — Outwin delivers performance-first marketing designed to increase leads, sales, and brand visibility."    
-    ,
+      "We build full-funnel digital strategies that drive measurable growth. From social media management and content creation to media buying, SEO, and email automation — Outwin delivers performance-first marketing designed to increase leads, sales, and brand visibility.",
     details: [
       "SEO & Marketing",
       "Social Media Management",
@@ -183,11 +188,9 @@ const serviceData = [
       "Media Buying & Strategy",
       "Email Marketing & Automation",
     ],
-    bookCallLink: "/contact",
   },
   {
     title: "BRANDING & IDENTITY",
-    price: "$2,500",
     icon: "/Services/BRANDING & IDENTITY.svg",
     description:
       "Your brand is more than a logo — it’s your voice, story, and market presence. We craft clear brand strategies, visual identities, messaging systems, and complete brand guidelines that position you as a premium, trusted name in your industry.",
@@ -197,11 +200,9 @@ const serviceData = [
       "Logo & Visual Identity Design",
       "Brand Guidelines & Systems",
     ],
-    bookCallLink: "/contact",
   },
   {
     title: "MEDIA PRODUCTION",
-    price: "$2,500",
     icon: "/Services/MEDIA PRODUCTION.svg",
     description:
       "High-quality visuals that move people and elevate brands. We produce creative video content, motion graphics, animations, and full post-production services designed to boost engagement and communicate your message with impact.",
@@ -211,11 +212,9 @@ const serviceData = [
       "2D & 3D Animation",
       "Motion Graphics",
     ],
-    bookCallLink: "/contact",
   },
   {
     title: "PRINTING & COLLATERAL",
-    price: "$1,500",
     icon: "/Services/PRINTING & COLLATERAL.svg",
     description:
       "Your offline presence matters as much as your digital one. We design and produce premium printed materials: business cards, stationery, brochures, reports, banners, packaging, and every asset your brand needs to represent itself professionally.",
@@ -225,11 +224,9 @@ const serviceData = [
       "Flyers, Brochures, & Annual Reports",
       "Posters, Banners, & Marketing Materials",
     ],
-    bookCallLink: "/contact",
   },
   {
     title: "WEBSITE DEVELOPMENT",
-    price: "$2,500",
     icon: "/Services/WEBSITE DEVELOPMENT.svg",
     description:
       "We build modern, fast, and conversion-focused websites that turn visitors into customers. From corporate sites and e-commerce platforms to custom business systems, UX/UI design, and interactive digital experiences — we deliver websites built to scale.",
@@ -241,16 +238,13 @@ const serviceData = [
       "Prototyping & Functional Design",
       "UX/UI Design",
     ],
-    bookCallLink: "/contact",
   },
   {
     title: "EVENTS & EXHIBITIONS",
-    price: "$2,500",
     icon: "/Services/EVENTS & EXHIBITIONS.svg",
     description:
       "Create memorable brand experiences that connect with your audience. We handle brand activations, exhibitions, roadshows, booth design, and full event coordination to bring your brand to life in the real world.",
     details: ["Brand Activations", "Exhibitions", "Roadshows"],
-    bookCallLink: "/contact",
   },
 ];
 
@@ -259,17 +253,43 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44">
       <Navbar />
       <section className="w-full pb-16 md:pb-20 lg:pb-24">
-      <SectionWrapper>
-        {/* Hero Section */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-            Our <span className="text-[#45B7BA]">Services</span>
-          </h1>
-          <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-[#45B7BA] to-[#006781] mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-4">
-            We provide a full suite of integrated marketing services designed to elevate your brand and accelerate business growth.
-          </p>
-        </div>
+        <SectionWrapper>
+          {/* Hero Section */}
+          {/* Top Row: Hero + Stats */}
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] gap-6 md:gap-8 mb-12 md:mb-16">
+            {/* Left: Get in touch block */}
+            <div className="bg-[#032131] rounded-3xl border border-[#45B7BA]/30 shadow-[0_26px_80px_rgba(0,0,0,0.85)] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                  Our{" "}
+                  <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#45B7BA] via-[#2F8FA0] to-[#006781]">
+                    Services
+                  </span>
+                </h1>
+                <p className="text-sm sm:text-base text-gray-200 max-w-2xl">
+                  We provide a full suite of integrated marketing services
+                  designed to elevate your brand and accelerate business growth.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: Stats */}
+            <div className="bg-gradient-to-br from-[#004861] via-[#007a8b] to-[#4fd1c5] rounded-3xl p-5 sm:p-6 md:p-7 shadow-[0_26px_80px_rgba(0,0,0,0.9)] grid grid-cols-2 gap-4 sm:gap-5 content-center">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-black/20 rounded-2xl border border-white/15 px-4 py-3 sm:px-5 sm:py-4 flex flex-col justify-center"
+                >
+                  <p className="text-[10px] sm:text-xs tracking-[0.25em] text-white/80 uppercase mb-1">
+                    {stat.label}
+                  </p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-extrabold">
+                    {stat.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Services with Projects Sections */}
           <div className="space-y-12 md:space-y-16 lg:space-y-20 mb-12 md:mb-16">
@@ -279,9 +299,9 @@ export default function ServicesPage() {
                 service={service}
                 projects={sampleProjects[service.title] || []}
               />
-          ))}
-        </div>
-      </SectionWrapper>
+            ))}
+          </div>
+        </SectionWrapper>
       </section>
 
       {/* FAQ Section */}

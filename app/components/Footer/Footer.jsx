@@ -13,7 +13,7 @@ const Footer = () => {
       {/* حاوية المحتوى الرئيسي */}
       <div className="container mx-auto px-4 max-w-7xl">
         {/* الصف العلوي: السوشيال ميديا + الروابط في بطاقة واحدة كبيرة على اليمين */}
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] gap-8 md:gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] gap-4 md:gap-5 mb-10">
           {/* العمود الأيسر: شبكة السوشيال ميديا (4 مربعات) */}
           <SocialMediaCards />
 

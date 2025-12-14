@@ -9,19 +9,20 @@ const footerLinks = {
     "FAQ's",
   ],
   Services: [
-    "Web Development",
-    "App Development",
-    "Web Design",
     "Digital Marketing",
+    "Branding & Identity",
+    "Media Production",
+    "Printing & Collateral",
+    "Website Development",
+    "Events & Exhibitions",
   ],
-  Projects: ["Klothink", "Zenith", "Novus", "Apex"],
   Company: [{ name: "Careers", url: "/career" }],
   blogs: [{ name: "Blogs", url: "/blogs" }],
 };
 
 const FooterLinkColumns = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div className="flex flex-wrap gap-8 justify-between">
       {Object.entries(footerLinks).map(([title, links]) => (
         <div key={title}>
           <h3 className="text-base md:text-lg font-bold mb-4 text-[#45B7BA] uppercase tracking-wide">

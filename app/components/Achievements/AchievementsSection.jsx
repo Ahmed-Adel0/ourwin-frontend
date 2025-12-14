@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import SectionHeader from "../SectionHeader";
 
 const achievements = [
   {
@@ -64,11 +65,7 @@ const AchievementsSection = () => {
   return (
     <section ref={sectionRef} className="mt-16 md:mb-20">
       {/* Header Banner */}
-      <div className="rounded-3xl bg-gradient-to-r from-[#006781] via-[#45B7BA] to-[#0b253b] px-6 sm:px-8 md:px-10 sm:py-5 shadow-[0_24px_80px_rgba(0,0,0,0.8)] mb-6 sm:mb-8">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold tracking-wide">
-          OUR ACHIEVEMENTS
-        </h2>
-      </div>
+      <SectionHeader title="OUR ACHIEVEMENTS" />
 
       {/* Achievements Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
