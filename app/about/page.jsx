@@ -105,53 +105,6 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          {/* Team Section */}
-          <section className="mb-16 md:mb-20">
-            {/* Header bar */}
-            <SectionHeader title="MEET THE BRILLIANT MINDS BEHIND OUTWIN" />
-
-            {/* Team grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-              {teamMembers.map((member, index) => (
-                <article
-                  key={member.name}
-                  className="bg-[#032131] rounded-2xl border border-[#45B7BA]/25 shadow-[0_22px_70px_rgba(0,0,0,0.85)] overflow-hidden flex flex-col"
-                >
-                  <div className="px-5 pt-5 pb-4 border-b border-black/40">
-                    <p className="text-xs text-[#64CCC5]/80 tracking-[0.25em] uppercase mb-1">
-                      Team {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-[11px] sm:text-xs text-gray-300">
-                      {member.role}
-                    </p>
-                  </div>
-
-                  {/* Placeholder avatar block */}
-                  <div className="flex-1 bg-gradient-to-b from-[#06324a] via-[#032131] to-[#02141f] flex items-center justify-center py-10">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#f3b5a4]/90 flex items-center justify-center text-black font-bold text-xl">
-                      {member.name.charAt(0)}
-                    </div>
-                  </div>
-
-                  {/* Social icons row (placeholders) */}
-                  <div className="px-5 py-3 border-t border-black/40 flex items-center justify-center gap-3 text-xs text-gray-300">
-                    <span className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center border border-white/10">
-                      f
-                    </span>
-                    <span className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center border border-white/10">
-                      x
-                    </span>
-                    <span className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center border border-white/10">
-                      in
-                    </span>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
           {/* Awards Section */}
           <section>
             <SectionHeader title="AWARDS & RECOGNITIONS" />

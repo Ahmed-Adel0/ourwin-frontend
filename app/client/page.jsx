@@ -12,34 +12,42 @@ const clientCategories = [
   "Fashion & Retail",
   "Technology",
   "Healthcare",
-  "Education"
+  "Education",
 ];
 
 // توليد شعارات العملاء من الملفات
 const generateClients = () => {
   const clients = [];
-  const categories = ["Corporates", "Restaurants", "Real Estates", "Fashion & Retail", "Technology", "Healthcare", "Education"];
-  
+  const categories = [
+    "Corporates",
+    "Restaurants",
+    "Real Estates",
+    "Fashion & Retail",
+    "Technology",
+    "Healthcare",
+    "Education",
+  ];
+
   // Assets 4-27
   for (let i = 4; i <= 27; i++) {
     clients.push({
       id: `client-${i}`,
       name: `Client ${i}`,
       logo: `/Clients/Asset ${i}.png`,
-      category: categories[Math.floor(Math.random() * categories.length)]
+      category: categories[Math.floor(Math.random() * categories.length)],
     });
   }
-  
+
   // Assets 60-93
-  for (let i = 60; i <= 93; i++) {
+  for (let i = 60; i <= 98; i++) {
     clients.push({
       id: `client-${i}`,
       name: `Client ${i}`,
       logo: `/Clients/Asset ${i}.png`,
-      category: categories[Math.floor(Math.random() * categories.length)]
+      category: categories[Math.floor(Math.random() * categories.length)],
     });
   }
-  
+
   return clients;
 };
 
@@ -49,9 +57,12 @@ const ClientsPage = () => {
   const allClients = generateClients();
 
   // فلترة العملاء
-  const filteredClients = allClients.filter(client => {
-    const matchesCategory = activeCategory === "All" || client.category === activeCategory;
-    const matchesSearch = client.name.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredClients = allClients.filter((client) => {
+    const matchesCategory =
+      activeCategory === "All" || client.category === activeCategory;
+    const matchesSearch = client.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -61,24 +72,30 @@ const ClientsPage = () => {
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#45B7BA]/10 via-transparent to-transparent" />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-            <a href="/" className="hover:text-[#45B7BA] transition-colors">Home</a>
+            <a href="/" className="hover:text-[#45B7BA] transition-colors">
+              Home
+            </a>
             <span>/</span>
             <span className="text-white">Clients</span>
           </div>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ fontFamily: 'ClashDisplay, sans-serif' }}>
+          <h1
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            style={{ fontFamily: "ClashDisplay, sans-serif" }}
+          >
             LET'S BECOME
             <br />
             <span className="text-[#45B7BA]">ONE OF OUR CLIENTS</span>
           </h1>
 
           <p className="text-xl text-gray-300 max-w-2xl mb-12">
-            Join 50+ leading brands who trust Outwin Digital Solutions for their digital transformation journey.
+            Join 50+ leading brands who trust Outwin Digital Solutions for their
+            digital transformation journey.
           </p>
 
           {/* Stats */}
@@ -87,10 +104,12 @@ const ClientsPage = () => {
               { number: "58+", label: "Trusted Clients" },
               { number: "120+", label: "Projects Delivered" },
               { number: "15+", label: "Industries Served" },
-              { number: "98%", label: "Client Satisfaction" }
+              { number: "98%", label: "Client Satisfaction" },
             ].map((stat, idx) => (
               <div key={idx} className="border-l-2 border-[#45B7BA] pl-4">
-                <div className="text-4xl font-bold text-[#45B7BA] mb-1">{stat.number}</div>
+                <div className="text-4xl font-bold text-[#45B7BA] mb-1">
+                  {stat.number}
+                </div>
                 <div className="text-sm text-gray-400">{stat.label}</div>
               </div>
             ))}
@@ -115,7 +134,7 @@ const ClientsPage = () => {
 
           {/* Category Filters */}
           <div className="flex flex-wrap gap-3">
-            {clientCategories.map(category => (
+            {clientCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
@@ -133,7 +152,8 @@ const ClientsPage = () => {
 
           {/* Results Count */}
           <div className="mt-6 text-gray-400 text-sm">
-            Showing {filteredClients.length} {filteredClients.length === 1 ? 'client' : 'clients'}
+            Showing {filteredClients.length}{" "}
+            {filteredClients.length === 1 ? "client" : "clients"}
           </div>
         </div>
       </section>
@@ -148,7 +168,7 @@ const ClientsPage = () => {
                   key={client.id}
                   className="group relative aspect-[4/2] bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#45B7BA] transition-all duration-300 hover:shadow-lg hover:shadow-[#45B7BA]/20"
                   style={{
-                    animation: `fadeInUp 0.6s ease-out ${idx * 0.05}s both`
+                    animation: `fadeInUp 0.6s ease-out ${idx * 0.05}s both`,
                   }}
                 >
                   {/* Logo */}
@@ -163,7 +183,9 @@ const ClientsPage = () => {
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#45B7BA]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end justify-center pb-4">
-                    <span className="text-black font-semibold text-sm">{client.category}</span>
+                    <span className="text-black font-semibold text-sm">
+                      {client.category}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -171,7 +193,9 @@ const ClientsPage = () => {
           ) : (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">🔍</div>
-              <p className="text-xl text-gray-400">No clients found matching your search</p>
+              <p className="text-xl text-gray-400">
+                No clients found matching your search
+              </p>
             </div>
           )}
         </div>
@@ -180,7 +204,10 @@ const ClientsPage = () => {
       {/* CTA Section */}
       <section className="px-6 py-20 border-t border-gray-800">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'ClashDisplay, sans-serif' }}>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-6"
+            style={{ fontFamily: "ClashDisplay, sans-serif" }}
+          >
             Ready to Join Them?
           </h2>
           <p className="text-xl text-gray-300 mb-8">

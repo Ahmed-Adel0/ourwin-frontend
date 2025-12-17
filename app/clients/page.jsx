@@ -48,7 +48,7 @@ const generateClients = () => {
   }
 
   // Assets 60-93
-  for (let i = 60; i <= 93; i++) {
+  for (let i = 60; i <= 98; i++) {
     clients.push({
       id: `client-${i}`,
       name: `Client ${i}`,
