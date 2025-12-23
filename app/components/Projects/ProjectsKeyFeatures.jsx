@@ -10,10 +10,10 @@ import {
 } from "@heroicons/react/24/solid";
 
 const stats = [
-  { label: "CLIENTS", value: "200+" },
-  { label: "PROJECTS", value: "280+" },
-  { label: "HAPPY CLIENTS", value: "100%" },
-  { label: "FOLLOWER", value: "420K" },
+  { label: "CREATIVE OUTPUTS", value: "2K+" },
+  { label: "PROJECTS DELIVERED", value: "100+" },
+  { label: "CLIENT RETENTION", value: "90%" },
+  { label: "ON-TIME DELIVERY", value: "95%" },
 ];
 
 const featuresData = [

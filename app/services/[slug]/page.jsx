@@ -1088,7 +1088,10 @@ const ServiceDetailPage = () => {
             {service.title.toLowerCase()} services.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="px-8 py-4 bg-[#45B7BA] text-black hover:cursor-pointer font-semibold rounded-lg hover:bg-[#3da5a8] transition-colors">
+            <button
+              onClick={() => router.push("/contact")}
+              className="px-8 py-4 bg-[#45B7BA] text-black hover:cursor-pointer font-semibold rounded-lg hover:bg-[#3da5a8] transition-colors"
+            >
               Request a Quote
             </button>
             <button className="px-8 py-4 bg-transparent border-2 hover:cursor-pointer border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">

@@ -101,8 +101,8 @@ const ClientsPage = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
             {[
-              { number: "58+", label: "Trusted Clients" },
-              { number: "120+", label: "Projects Delivered" },
+              { number: "70+", label: "Trusted Clients" },
+              { number: "100+", label: "Projects Delivered" },
               { number: "15+", label: "Industries Served" },
               { number: "98%", label: "Client Satisfaction" },
             ].map((stat, idx) => (

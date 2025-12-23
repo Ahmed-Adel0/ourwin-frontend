@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 // SVG Icons Components
 const InstagramIcon = ({ className }) => (
@@ -52,28 +53,28 @@ const socialMedia = [
     platform: "INSTAGRAM",
     icon: InstagramIcon,
     url: "#",
-    description: "Attractive videos of our projects and latest work",
+    description: "Visual highlights, campaigns, and creative work.",
     bg: "#185E73",
   },
   {
     platform: "LINKEDIN",
     icon: LinkedInIcon,
     url: "#",
-    description: "Contact professionals and follow the company news",
+    description: "Company updates, insights, and professional news.",
     bg: "#185E73",
   },
   {
     platform: "TIKTOK",
     icon: TikTokIcon,
     url: "#",
-    description: "Fast and innovative content on development techniques",
+    description: "Short-form creative content and digital trends.",
     bg: "#185E73",
   },
   {
     platform: "BEHANCE",
     icon: BehanceIcon,
     url: "#",
-    description: "Interactive designs and complete creative projects",
+    description: "Selected projects and detailed case studies.",
     bg: "#185E73",
   },
 ];

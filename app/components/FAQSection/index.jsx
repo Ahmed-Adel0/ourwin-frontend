@@ -21,16 +21,18 @@ export default function FAQSection() {
     {
       question: "What industries does Outwin specialize in?",
       answer:
-"We work with a wide range of sectors including: Restaurants, Real Estate, E-commerce, Corporate Brands, and Personal Brands. Each industry gets a customized strategy based on its market behavior."    },
+        "We work with a wide range of sectors including: Restaurants, Real Estate, E-commerce, Corporate Brands, and Personal Brands. Each industry gets a customized strategy based on its market behavior.",
+    },
     {
-      question:
-        "How long does it take to see real results?",
+      question: "How long does it take to see real results?",
       answer:
-"While timelines vary based on industry and goals, most clients start seeing measurable improvements within 4–8 weeks through consistent optimization and data-driven execution."    },
+        "While timelines vary based on industry and goals, most clients start seeing measurable improvements within 4–8 weeks through consistent optimization and data-driven execution.",
+    },
     {
       question: "Do you offer complete account management?",
       answer:
-"Yes — Outwin provides end-to-end services: Content creation, design, social media management, ads, branding, web development, and reporting. Everything is handled by a dedicated team to ensure consistency and high performance."    },
+        "Yes — Outwin provides end-to-end services: Content creation, design, social media management, ads, branding, web development, and reporting. Everything is handled by a dedicated team to ensure consistency and high performance.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -54,7 +56,7 @@ export default function FAQSection() {
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left text-white hover:bg-[#023445] transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between hover:cursor-pointer text-left text-white hover:bg-[#023445] transition-colors"
                   >
                     <div>
                       <h3 className="text-base md:text-lg font-semibold">

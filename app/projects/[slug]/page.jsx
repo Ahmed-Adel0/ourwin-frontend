@@ -25,7 +25,7 @@ const projectsDatabase = {
       "40% increase in user retention",
       "Featured by Apple as 'App of the Day'",
     ],
-    imageUrl: "/hands.webp",
+    imageUrl: "/Acsel/1.jpg",
     technologies: [
       "React Native",
       "Firebase",
@@ -35,7 +35,7 @@ const projectsDatabase = {
       "Node.js",
     ],
     team: 4,
-    gallery: ["/hands.webp", "/hands.webp", "/hands.webp", "/hands.webp"],
+    gallery: ["/Acsel/2.jpg", "/Acsel/3.jpg", "/Acsel/4.jpg", "/Acsel/5.jpg"],
     relatedProjects: [
       {
         title: "Corporate Website",
@@ -335,7 +335,7 @@ const ProjectDetailPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#003349] to-[#006781]">
+      <section className="px-6 py-20 border-t border-gray-800 border-b border-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2
             className="text-4xl md:text-5xl font-bold mb-6"
@@ -343,13 +343,17 @@ const ProjectDetailPage = () => {
           >
             Have a Similar Project in Mind?
           </h2>
-          <p className="text-xl text-gray-200 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Let's collaborate to bring your vision to life with cutting-edge
-            technology and creative excellence.
+            technology and creative excellence.{" "}
           </p>
-          <button className="inline-flex items-center gap-2 px-8 py-4 bg-[#45B7BA] text-black font-semibold rounded-lg hover:bg-[#3da5a8] transition-colors text-lg">
-            Let's Talk <span>→</span>
-          </button>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#45B7BA] text-black font-semibold rounded-lg hover:bg-[#3da5a8] transition-colors"
+          >
+            Let's Talk
+            <span>→</span>
+          </a>
         </div>
       </section>
       <Footer />

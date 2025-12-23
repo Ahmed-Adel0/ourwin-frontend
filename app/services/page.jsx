@@ -6,10 +6,10 @@ import SectionWrapper from "../components/SectionWrapper";
 import ServiceWithProjects from "../components/Services/ServiceWithProjects";
 
 const stats = [
-  { label: "CLIENTS", value: "200+" },
-  { label: "PROJECTS", value: "280+" },
-  { label: "HAPPY CLIENTS", value: "100%" },
-  { label: "FOLLOWER", value: "420K" },
+  { label: "SERVICES", value: "6+" },
+  { label: "INDUSTRIES SERVED", value: "15+" },
+  { label: "HAPPY CLIENTS", value: "100+" },
+  { label: "CLIENT SATISFACTION", value: "90%" },
 ];
 
 // Sample projects data - يمكن استبدالها ببيانات حقيقية من API أو CMS

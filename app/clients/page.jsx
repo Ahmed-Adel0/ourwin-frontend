@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
@@ -48,7 +49,7 @@ const generateClients = () => {
   }
 
   // Assets 60-93
-  for (let i = 60; i <= 98; i++) {
+  for (let i = 60; i <= 99; i++) {
     clients.push({
       id: `client-${i}`,
       name: `Client ${i}`,
@@ -73,7 +74,7 @@ const ClientsPage = () => {
 
   return (
     <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44">
-      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+      <section className="w-full">
         <Navbar />
         <SectionWrapper id="key-features-section">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] gap-6 md:gap-8 mb-12 md:mb-16">
@@ -155,11 +156,13 @@ const ClientsPage = () => {
                   >
                     {/* Logo */}
                     <div className="relative w-full h-full flex items-center justify-center">
-                      <img
+                      <Image
                         src={client.logo}
                         alt={client.name}
                         className="w-full h-full object-contain grayscale contrast-200 group-hover:grayscale-0 transition-all duration-300"
                         loading="lazy"
+                        width={150}
+                        height={80}
                       />
                     </div>
 
@@ -218,8 +221,8 @@ const ClientsPage = () => {
             }
           `}</style>
         </SectionWrapper>
-        <Footer />
       </section>
+      <Footer />
     </main>
   );
 };

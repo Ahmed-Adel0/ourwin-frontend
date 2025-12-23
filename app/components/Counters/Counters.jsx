@@ -1,12 +1,23 @@
-
 import SectionWrapper from "../SectionWrapper";
 
 const stats = [
-  { label: "CLIENTS", value: "200+", color: "from-[#45B7BA] to-[#0B3B4E]" },
-  { label: "PROJECTS", value: "280+", color: "from-[#0B3B4E] to-[#45B7BA]" },
-  { label: "HAPPY CLIENTS", value: "100%", color: "from-[#45B7BA] to-[#0B3B4E]" },
-  { label: "FOLLOWER", value: "420K", color: "from-[#0B3B4E] to-[#45B7BA]" },
-  { label: "YEARS OF EXPERIENCE", value: "10+", color: "from-[#45B7BA] to-[#0B3B4E]" },
+  { label: "CLIENTS", value: "70+", color: "from-[#45B7BA] to-[#0B3B4E]" },
+  { label: "PROJECTS", value: "100+", color: "from-[#0B3B4E] to-[#45B7BA]" },
+  {
+    label: "HAPPY CLIENTS",
+    value: "90%",
+    color: "from-[#45B7BA] to-[#0B3B4E]",
+  },
+  {
+    label: "CREATIVE ASSETS",
+    value: "2000+",
+    color: "from-[#0B3B4E] to-[#45B7BA]",
+  },
+  {
+    label: "YEARS OF EXPERIENCE",
+    value: "6+",
+    color: "from-[#45B7BA] to-[#0B3B4E]",
+  },
 ];
 
 const Counters = () => {
@@ -37,4 +48,3 @@ const Counters = () => {
 };
 
 export default Counters;
-

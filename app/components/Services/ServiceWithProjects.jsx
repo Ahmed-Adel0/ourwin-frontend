@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
 import ServiceCardNew from "./ServiceCardNew";
 import ProjectsCarousel from "./ProjectsCarousel";
 
@@ -14,14 +16,14 @@ import ProjectsCarousel from "./ProjectsCarousel";
  */
 const ServiceWithProjects = ({ service, projects = [] }) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-16 h-full">
       {/* Left: Service Card */}
-      <div className="w-full">
+      <div className="w-full h-full">
         <ServiceCardNew data={service} />
       </div>
 
       {/* Right: Projects Carousel */}
-      <div className="w-full">
+      <div className="w-full h-full">
         <ProjectsCarousel
           projects={projects}
           categoryTitle={`${service.title} PROJECTS`}

@@ -14,8 +14,6 @@ const baseProjects = [
     description:
       "An all-in-one health and wellness app that offers personalized fitness plans, nutrition guidance, and virtual workout classes.",
     imageUrl: "/hands.webp",
-    technologies: ["React Native", "Firebase", "Redux", "REST API", "MongoDB"],
-    team: 4,
     detailsLink: "/projects/zenith-fitness-app",
   },
   {
@@ -25,8 +23,6 @@ const baseProjects = [
     description:
       "A complete overhaul of a corporate website to enhance its brand identity and user experience.",
     imageUrl: "/hands.webp",
-    technologies: ["Wordpress", "PHP", "HTML5", "CSS3", "Javascript"],
-    team: 5,
     detailsLink: "/projects/a-aura-ecommerce",
   },
   {
@@ -36,8 +32,6 @@ const baseProjects = [
     description:
       "A modern corporate website designed to elevate brand presence and improve user engagement.",
     imageUrl: "/hands.webp",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Node.js"],
-    team: 3,
     detailsLink: "/projects/corporate-website",
   },
   {
@@ -47,8 +41,6 @@ const baseProjects = [
     description:
       "Complete brand identity redesign including logo, color palette, and visual guidelines.",
     imageUrl: "/hands.webp",
-    technologies: ["Figma", "Adobe Creative Suite", "Brand Guidelines"],
-    team: 2,
     detailsLink: "/projects/branding-identity",
   },
   {
@@ -58,8 +50,6 @@ const baseProjects = [
     description:
       "A full-featured e-commerce platform with payment integration and inventory management.",
     imageUrl: "/hands.webp",
-    technologies: ["Shopify", "Liquid", "JavaScript", "API Integration"],
-    team: 4,
     detailsLink: "/projects/ecommerce-platform",
   },
   {
@@ -69,8 +59,6 @@ const baseProjects = [
     description:
       "Cross-platform mobile application with offline capabilities and real-time synchronization.",
     imageUrl: "/hands.webp",
-    technologies: ["Flutter", "Firebase", "REST API", "State Management"],
-    team: 5,
     detailsLink: "/projects/mobile-application",
   },
 ];
@@ -156,9 +144,6 @@ const ProjectsShowcase = () => {
                       <span className="text-xs uppercase tracking-wider text-[#45B7BA] font-semibold">
                         {project.category}
                       </span>
-                      <span className="text-xs text-gray-400">
-                        {project.timeTaken}
-                      </span>
                     </div>
                     <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-[#45B7BA] transition-colors duration-300">
                       {project.title}
@@ -166,44 +151,28 @@ const ProjectsShowcase = () => {
                     <p className="text-sm text-gray-300 mb-3 leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
-
-                    {/* Technologies Tags */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.technologies
-                        .slice(0, 3)
-                        .map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="text-xs px-2 py-1 bg-[#00445C] text-gray-300 rounded-full border border-white/10"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                    </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-white/10">
-                    <div className="flex items-center gap-2 text-xs text-gray-400">
-                      <span>👥</span>
-                      <span>{project.team} Team</span>
-                    </div>
-                    <div className="flex items-center text-[#45B7BA] font-semibold text-xs group-hover:gap-1 transition-all duration-300">
-                      <span>VIEW</span>
+                  <div className="relative mt-4">
+                    <button
+                      onClick={() => router.push(`/services/${serviceSlug}`)}
+                      className="w-full hover:cursor-pointer flex items-center justify-center gap-2 bg-gradient-to-r from-[#45B7BA]/10 to-[#45B7BA]/5 hover:from-[#45B7BA]/20 hover:to-[#45B7BA]/15 text-[#45B7BA] hover:text-white py-3 px-4 rounded-lg border border-[#45B7BA]/30 hover:border-[#45B7BA] transition-all duration-300 group"
+                    >
+                      <span className="font-semibold text-sm">Learn More</span>
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
                         fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
                         stroke="currentColor"
-                        className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300"
+                        viewBox="0 0 24 24"
                       >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
                         />
                       </svg>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
