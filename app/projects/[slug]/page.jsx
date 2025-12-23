@@ -35,7 +35,12 @@ const projectsDatabase = {
       "Node.js",
     ],
     team: 4,
-    gallery: ["/Acsel/2.jpg", "/Acsel/3.jpg", "/Acsel/4.jpg", "/Acsel/5.jpg"],
+    gallery: [
+      "/Acsel/Artboard 1.png",
+      "/Acsel/Artboard 2.png",
+      "/Acsel/Artboard 3.png",
+      "/Acsel/Artboard 3.png",
+    ],
     relatedProjects: [
       {
         title: "Corporate Website",
