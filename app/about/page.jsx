@@ -3,60 +3,49 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
-import AchievementsSection from "../components/Achievements/AchievementsSection";
-import AnimatedStatValue from "../components/AnimatedStatValue";
-import SectionHeader from "../components/SectionHeader";
-
+import FAQSection from "../components/FAQSection/FAQList";
 const stats = [
-  { label: "CLIENTS", value: "200+" },
-  { label: "PROJECTS", value: "280+" },
-  { label: "HAPPY CLIENTS", value: "100%" },
-  { label: "FOLLOWER", value: "420K" },
+  { label: "CLIENTS", value: "70+" },
+  { label: "YEARS OF EXPERIENCE", value: "6+" },
+  { label: "HAPPY CLIENTS", value: "90%" },
+  { label: "YEARS OF EXPERIENCE", value: "15+" },
 ];
 
-const teamMembers = [
+const faqs = [
   {
-    name: "JOHN SMITH",
-    role: "Co-Founder & CEO",
+    question: "Who We Are",
+    answer:
+      "Outwin is a digital-first marketing agency built to help brands grow, perform, and stand out in competitive markets. We combine strategy, creativity, and technology to deliver digital solutions that are not only visually strong, but also measurable and results-driven. Our work goes beyond execution. We partner with brands to understand their vision, define clear objectives, and translate them into impactful digital experiences.",
   },
   {
-    name: "SARAH ADAMS",
-    role: "Head of Design",
+    question: "What We Do",
+    answer:
+      "We provide integrated marketing solutions covering: Digital Marketing & Social Media Management, Branding & Visual Identity, Media Production & Motion Graphics, Website Development & UI/UX, Printing & Marketing Collateral, Events & Brand Activations. Every service we offer is designed to support business growth, brand consistency, and long-term performance.",
   },
   {
-    name: "EMILY JOHNSON",
-    role: "Lead Web Developer",
+    question: "Our Approach",
+    answer:
+      "At Outwin, our process is built on clarity and collaboration: Strategy First: We start by understanding your business, market, and goals. Creative Execution: We craft content and visuals that align with your brand and speak to your audience. Performance Focus: We measure, optimize, and refine to ensure real impact. Partnership Mindset: We work as an extension of your team, not just a service provider.",
   },
   {
-    name: "WILLIAM LEE",
-    role: "Lead Backend Developer",
-  },
-];
-
-const awards = [
-  {
-    date: "October 2017",
-    title: "DIGITAL EXCELLENCE AWARD",
-    description:
-      "Recognition for outstanding contributions to the digital industry, celebrating our ability to deliver exceptional web design and development solutions.",
+    question: "Why Outwin",
+    answer:
+      "Tailored solutions, not one-size-fits-all packages. A balance between creativity and performance. Clear communication and transparent processes. Strong experience across multiple industries. Focus on results, not just deliverables.",
   },
   {
-    date: "March 2019",
-    title: "TOP MOBILE APP DEVELOPMENT AGENCY",
-    description:
-      "Acknowledged as a top mobile app development partner for crafting seamless and user-centric mobile applications.",
+    question: "Our Vision",
+    answer:
+      "To become a trusted digital partner for ambitious brands in Egypt and the Gulf, delivering marketing solutions that drive growth, credibility, and long-term success.",
   },
   {
-    date: "July 2022",
-    title: "BEST DIGITAL MARKETING CAMPAIGN",
-    description:
-      "Awarded for data-driven campaigns that achieved remarkable growth and brand visibility for our clients.",
+    question: "Our Mission",
+    answer:
+      "To empower brands through strategic thinking, creative excellence, and measurable digital performance—helping them compete, scale, and win in today's digital landscape.",
   },
   {
-    date: "November 2024",
-    title: "INNOVATIVE TECH STARTUP AWARD",
-    description:
-      "Recognized for pioneering efforts in exploring and implementing cutting-edge technologies to drive innovation.",
+    question: "Let's Build What's Next",
+    answer:
+      "We believe strong brands are built through strategy, consistency, and smart execution. Outwin is here to help you elevate your digital presence and achieve meaningful growth.",
   },
 ];
 
@@ -105,34 +94,7 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          {/* Awards Section */}
-          <section>
-            <SectionHeader title="AWARDS & RECOGNITIONS" />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
-              {awards.map((award) => (
-                <article
-                  key={award.title}
-                  className="bg-[#032131] rounded-2xl border border-[#45B7BA]/25 shadow-[0_22px_70px_rgba(0,0,0,0.85)] px-5 py-5 flex flex-col justify-between"
-                >
-                  <div className="mb-3">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/35 border border-white/10 text-[11px] text-gray-200 mb-3">
-                      <span className="opacity-70">Date</span>
-                      <span className="font-semibold">• {award.date}</span>
-                    </div>
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2 leading-snug">
-                      {award.title}
-                    </h3>
-                    <p className="text-[11px] sm:text-xs text-gray-300 leading-relaxed">
-                      {award.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-          {/* Achievements Section */}
-          <AchievementsSection />
+          <FAQSection faqs={faqs} />
         </SectionWrapper>
       </section>
 

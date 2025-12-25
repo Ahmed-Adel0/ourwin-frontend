@@ -27,7 +27,7 @@ const reasonsData = [
 
 const Reasons = () => {
   return (
-    <section className="w-full bg-black py-20 px-4 md:px-6">
+    <section className="w-full bg-black py-10 px-4 md:px-6">
       <SectionWrapper id="reasons-section">
         {/* Header bar */}
         <SectionHeader title="REASONS TO CHOOSE OUTWIN FOR YOUR DIGITAL JOURNEY" />

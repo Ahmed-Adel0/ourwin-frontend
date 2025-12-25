@@ -7,8 +7,8 @@ import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
 
 const stats = [
-  { label: "Trusted Clients", value: "58+" },
-  { label: "Projects Delivered", value: "120+" },
+  { label: "Trusted Clients", value: "70+" },
+  { label: "Projects Delivered", value: "100+" },
   { label: "Industries Served", value: "15+" },
   { label: "Client Satisfaction", value: "98%" },
 ];
@@ -89,7 +89,7 @@ const ClientsPage = () => {
                   </span>
                 </h1>
                 <p className="text-sm sm:text-base text-gray-200 max-w-2xl">
-                  Join 50+ leading brands who trust Outwin Digital Solutions for
+                  Join 70+ leading brands who trust Outwin Digital Solutions for
                   their digital transformation journey.
                 </p>
               </div>

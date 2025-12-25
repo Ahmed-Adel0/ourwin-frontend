@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import logger from "@/lib/logger";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,7 +50,7 @@ const ContactForm = () => {
       setStatusMessage("Message sent successfully!");
       event.currentTarget.reset();
     } catch (error) {
-      logger.error("Contact form submission error:", error);
+      console.error("Contact form submission error:", error);
       setStatusType("error");
       setStatusMessage("Failed to send message. Please try again.");
     } finally {

@@ -3,13 +3,6 @@ import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
 import ContactForm from "../components/Contact/ContactForm";
 
-const stats = [
-  { label: "CLIENTS", value: "200+" },
-  { label: "PROJECTS", value: "280+" },
-  { label: "HAPPY CLIENTS", value: "100%" },
-  { label: "FOLLOWER", value: "420K" },
-];
-
 const emailContacts = [
   {
     label: "General Inquiries",
@@ -34,7 +27,7 @@ const ContactPage = () => {
         <SectionWrapper>
           {/* Top Row: Hero + Stats */}
 
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] gap-6 md:gap-8 mb-12 md:mb-16">
+          <div className=" mb-12 md:mb-16">
             {/* Left: Get in touch block */}
             <div className="bg-[#032131] rounded-3xl border border-[#45B7BA]/30 shadow-[0_26px_80px_rgba(0,0,0,0.85)] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
               <div>
@@ -54,23 +47,6 @@ const ContactPage = () => {
                 </p>
               </div>
             </div>
-
-            {/* Right: Stats */}
-            <div className="bg-gradient-to-br from-[#004861] via-[#007a8b] to-[#4fd1c5] rounded-3xl p-5 sm:p-6 md:p-7 shadow-[0_26px_80px_rgba(0,0,0,0.9)] grid grid-cols-2 gap-4 sm:gap-5 content-center">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-black/20 rounded-2xl border border-white/15 px-4 py-3 sm:px-5 sm:py-4 flex flex-col justify-center"
-                >
-                  <p className="text-[10px] sm:text-xs tracking-[0.25em] text-white/80 uppercase mb-1">
-                    {stat.label}
-                  </p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-extrabold">
-                    {stat.value}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Bottom Row: Contact info + Form */}
@@ -86,7 +62,7 @@ const ContactPage = () => {
                   EMAILS
                 </button>
                 <button className="px-3 sm:px-4 py-1 rounded-full text-gray-300">
-                  OFFICE LOCATIONS
+                  LOCATIONS
                 </button>
               </div>
 

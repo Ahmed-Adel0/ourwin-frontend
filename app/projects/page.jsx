@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import ProjectsKeyFeatures from "../components/Projects/ProjectsKeyFeatures";
 import ProjectsShowcase from "../components/Projects/ProjectsShowcase";
-import FAQSection from "../components/FAQSection";
+import FAQSection from "../components/FAQSection/FAQSection";
 
 export const metadata = {
   title: "Projects - Outwin | Digital Solutions",

@@ -21,10 +21,7 @@ const clientLogos = clientLogoNumbers.map((assetNumber, index) => ({
 const Clients = () => {
   return (
     // نجعل القسم بنفس خلفية وحواف الأقسام الأخرى
-    <SectionWrapper
-      id="clients-section"
-      className="bg-black py-20"
-    >
+    <SectionWrapper id="clients-section" className="bg-black py-15">
       {/* Header unified with other sections */}
       <SectionHeader
         title="CLIENTS"
@@ -42,10 +39,7 @@ const Clients = () => {
         {Array.from({ length: 4 }, (_, rowIndex) => {
           const logosPerRow = Math.floor(clientLogos.length / 4);
           const start = rowIndex * logosPerRow;
-          const end =
-            rowIndex === 3
-              ? clientLogos.length
-              : start + logosPerRow; // الصف الأخير يأخذ الباقي
+          const end = rowIndex === 3 ? clientLogos.length : start + logosPerRow; // الصف الأخير يأخذ الباقي
           const rowLogos = clientLogos.slice(start, end);
           const isReverse = rowIndex >= 2; // الصفوف 3 و 4 عكس الاتجاه (لابتوب / ديسكتوب)
 
@@ -133,4 +127,3 @@ const Clients = () => {
 };
 
 export default Clients;
-

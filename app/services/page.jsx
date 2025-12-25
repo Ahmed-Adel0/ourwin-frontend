@@ -1,14 +1,14 @@
 "use client";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import FAQSection from "../components/FAQSection";
+import FAQSection from "../components/FAQSection/FAQSection";
 import SectionWrapper from "../components/SectionWrapper";
 import ServiceWithProjects from "../components/Services/ServiceWithProjects";
 
 const stats = [
   { label: "SERVICES", value: "6+" },
   { label: "INDUSTRIES SERVED", value: "15+" },
-  { label: "HAPPY CLIENTS", value: "100+" },
+  { label: "PROJECTS DELIVERED", value: "100+" },
   { label: "CLIENT SATISFACTION", value: "90%" },
 ];
 
