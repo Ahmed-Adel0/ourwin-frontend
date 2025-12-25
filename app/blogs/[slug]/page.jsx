@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import SectionWrapper from "../../components/SectionWrapper";
 import Link from "next/link";
 import Image from "next/image";
-import FAQSection from "../../components/FAQSection";
+import FAQSection from "../../components/FAQSection/FAQList";
 
 const blogPosts = [
   {
