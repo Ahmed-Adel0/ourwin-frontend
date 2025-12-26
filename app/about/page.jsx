@@ -3,7 +3,8 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import SectionWrapper from "../components/SectionWrapper";
-import FAQSection from "../components/FAQSection/FAQList";
+import FAQSection from "../components/FAQSection/FAQSection"; // تأكد من المسار الصحيح
+
 const stats = [
   { label: "CLIENTS", value: "70+" },
   { label: "YEARS OF EXPERIENCE", value: "6+" },
@@ -11,7 +12,7 @@ const stats = [
   { label: "YEARS OF EXPERIENCE", value: "15+" },
 ];
 
-const faqs = [
+const aboutFaqs = [
   {
     question: "Who We Are",
     answer:
@@ -51,10 +52,10 @@ const faqs = [
 
 const AboutPage = () => {
   return (
-    <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-40 text-white">
+    <main className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <section className="w-full">
+      <div className="pt-24 sm:pt-32 md:pt-40 lg:pt-40">
         <SectionWrapper>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] gap-6 md:gap-8 mb-12 md:mb-16">
             {/* Left: Get in touch block */}
@@ -67,8 +68,8 @@ const AboutPage = () => {
                     for a Digital - First World
                   </span>
                 </h1>
-                <p className="text-sm sm:text-base text-gray-200 max-w-2xl">
-                  Outwin is a performance-driven ,marketing agency built to help
+                <p className="text-sm sm:text-base text-gray-200 max-w-2xl mt-4">
+                  Outwin is a performance-driven marketing agency built to help
                   ambitious brands grow, compete, and scale with confidence. We
                   combine strategic thinking, powerful creative, and smart
                   technology to deliver measurable impact across branding,
@@ -77,11 +78,11 @@ const AboutPage = () => {
               </div>
             </div>
 
-            {/* Right: Stats */}
+            {/* Right: Stats - باستخدام البيانات المصححة */}
             <div className="bg-gradient-to-br from-[#004861] via-[#007a8b] to-[#4fd1c5] rounded-3xl p-5 sm:p-6 md:p-7 shadow-[0_26px_80px_rgba(0,0,0,0.9)] grid grid-cols-2 gap-4 sm:gap-5 content-center">
-              {stats.map((stat) => (
+              {stats.map((stat, index) => (
                 <div
-                  key={stat.label}
+                  key={index}
                   className="bg-black/20 rounded-2xl border border-white/15 px-4 py-3 sm:px-5 sm:py-4 flex flex-col justify-center"
                 >
                   <p className="text-[10px] sm:text-xs tracking-[0.25em] text-white/80 uppercase mb-1">
@@ -94,9 +95,34 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          <FAQSection faqs={faqs} />
         </SectionWrapper>
-      </section>
+
+        {/* قسم الأسئلة الشائعة */}
+        <div className="w-full bg-black py-10 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="text-center mb-10 md:mb-14">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                About Outwin
+                <span className="block text-[#45B7BA] mt-2">
+                  Questions & Answers
+                </span>
+              </h2>
+              <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+                Learn more about our agency, mission, and approach to digital
+                transformation
+              </p>
+            </div>
+
+            <FAQSection
+              faqs={aboutFaqs}
+              title="About Our Agency"
+              layout="list-only"
+              bgColor="bg-transparent"
+              borderColor="border-[#45B7BA]/40"
+            />
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </main>
