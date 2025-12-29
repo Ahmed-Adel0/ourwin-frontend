@@ -22,6 +22,7 @@ const ContactForm = () => {
     "Website Development",
     "Printing & Collateral",
     "Events & Exhibitions",
+    "Other",
   ];
 
   const handleChange = (e) => {
@@ -140,11 +141,14 @@ const ContactForm = () => {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full bg-black/50 border border-[#1f2a30] rounded-xl px-4 pl-12 py-3.5 text-white focus:outline-none focus:border-[#45B7BA] focus:ring-2 focus:ring-[#45B7BA]/20 transition-all duration-300 appearance-none"
+              className="w-full bg-black/50 border hover:cursor-pointer border-[#1f2a30] rounded-xl px-4 pl-12 py-3.5 text-white focus:outline-none focus:border-[#45B7BA] focus:ring-2 focus:ring-[#45B7BA]/20 transition-all duration-300 appearance-none"
             >
-              <option value="">Select a service</option>
               {services.map((service) => (
-                <option key={service} value={service}>
+                <option
+                  key={service}
+                  value={service}
+                  className="bg-black/90 text-white"
+                >
                   {service}
                 </option>
               ))}
@@ -203,7 +207,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full px-8 py-4 bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-bold rounded-xl hover:shadow-[0_0_30px_rgba(69,183,186,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-3 group"
+          className="w-full px-8 py-4 hover:cursor-pointer bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-bold rounded-xl hover:shadow-[0_0_30px_rgba(69,183,186,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-3 group"
         >
           {isSubmitting ? (
             <>

@@ -303,10 +303,6 @@ export default function ServicesPage() {
           </div>
         </SectionWrapper>
       </section>
-
-      {/* FAQ Section */}
-      <FAQSection />
-
       <Footer />
     </main>
   );

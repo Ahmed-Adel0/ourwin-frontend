@@ -16,7 +16,6 @@ export default function ProjectsPage() {
       {/* ProjectsKeyFeatures acts as the main hero + title for the page */}
       <ProjectsKeyFeatures />
       <ProjectsShowcase />
-      <FAQSection />
       <Footer />
     </main>
   );

@@ -102,10 +102,10 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-44 text-white">
+    <main className="min-h-screen bg-black pt-24 sm:pt-32 md:pt-40 lg:pt-33 text-white">
       <Navbar />
 
-      <section className="w-full pb-16 md:pb-20 lg:pb-24">
+      <section className="w-full">
         <SectionWrapper>
           {/* Hero Section المحسنة */}
           <div className="mb-12 md:mb-16 relative overflow-hidden rounded-3xl">
@@ -133,24 +133,16 @@ const ContactPage = () => {
                   goals.
                 </p>
 
-                <div className="flex flex-wrap gap-4">
-                  <button
-                    onClick={() =>
-                      document
-                        .getElementById("contact-form")
-                        .scrollIntoView({ behavior: "smooth" })
-                    }
-                    className="px-8 py-3.5 bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-bold rounded-full hover:shadow-[0_0_30px_rgba(69,183,186,0.3)] transition-all duration-300 hover:scale-105"
-                  >
-                    Send Message
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("locations")}
-                    className="px-8 py-3.5 border-2 border-[#45B7BA] text-[#45B7BA] font-bold rounded-full hover:bg-[#45B7BA]/10 transition-all duration-300 hover:scale-105"
-                  >
-                    Visit Our Office
-                  </button>
-                </div>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("contact-form")
+                      .scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="hover:cursor-pointer px-8 py-3.5 bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-bold rounded-full hover:shadow-[0_0_30px_rgba(69,183,186,0.3)] transition-all duration-300 hover:scale-105"
+                >
+                  Send Message
+                </button>
               </div>
             </div>
 
@@ -168,7 +160,7 @@ const ContactPage = () => {
                   <h2 className="text-2xl font-bold mb-4 text-white">
                     Contact <span className="text-[#45B7BA]">Channels</span>
                   </h2>
-                  <div className="inline-flex rounded-full bg-black/30 border border-black/60 p-1">
+                  <div className="inline-flex rounded-full bg-black/30 border border-black/60 p-1 ">
                     {Object.keys(contactData).map((tab) => (
                       <button
                         key={tab}
@@ -176,7 +168,7 @@ const ContactPage = () => {
                         className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                           activeTab === tab
                             ? "bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black shadow-lg"
-                            : "text-gray-300 hover:text-white hover:bg-white/5"
+                            : "text-gray-300 hover:text-white hover:bg-white/5 hover:cursor-pointer"
                         }`}
                       >
                         {tab.toUpperCase()}
@@ -221,7 +213,7 @@ const ContactPage = () => {
                           <div className="flex gap-2">
                             <button
                               onClick={() => handleCopyEmail(item.email)}
-                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 bg-gradient-to-br from-[#45B7BA]/10 to-[#2F8FA0]/10 border border-[#45B7BA]/30 rounded-lg hover:from-[#45B7BA]/20 hover:to-[#2F8FA0]/20 transition-all duration-300 group"
+                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 hover:cursor-pointer bg-gradient-to-br from-[#45B7BA]/10 to-[#2F8FA0]/10 border border-[#45B7BA]/30 rounded-lg hover:from-[#45B7BA]/20 hover:to-[#2F8FA0]/20 transition-all duration-300 group"
                               title="Copy email"
                             >
                               {copiedEmail === item.email ? (
@@ -243,7 +235,7 @@ const ContactPage = () => {
 
                             <button
                               onClick={() => handleSendEmail(item.email)}
-                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-medium rounded-lg hover:shadow-[0_0_15px_rgba(69,183,186,0.3)] transition-all duration-300 group"
+                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 hover:cursor-pointer bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-medium rounded-lg hover:shadow-[0_0_15px_rgba(69,183,186,0.3)] transition-all duration-300 group"
                               title="Send email"
                             >
                               <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -285,7 +277,7 @@ const ContactPage = () => {
                         <div className="p-4">
                           <button
                             onClick={() => handleCall(item.number)}
-                            className="w-full flex items-center justify-between px-4 py-3.5 bg-gradient-to-r from-[#45B7BA]/10 to-[#2F8FA0]/10 border border-[#45B7BA]/30 rounded-lg text-[#45B7BA] hover:from-[#45B7BA]/20 hover:to-[#2F8FA0]/20 hover:text-white transition-all duration-300 group"
+                            className="w-full flex items-center justify-between hover:cursor-pointer px-4 py-3.5 bg-gradient-to-r from-[#45B7BA]/10 to-[#2F8FA0]/10 border border-[#45B7BA]/30 rounded-lg text-[#45B7BA] hover:from-[#45B7BA]/20 hover:to-[#2F8FA0]/20 hover:text-white transition-all duration-300 group"
                           >
                             <div className="flex items-center gap-3">
                               <div className="p-2 bg-gradient-to-br from-[#45B7BA]/20 to-[#2F8FA0]/20 border border-[#45B7BA]/30 rounded-lg">
@@ -340,9 +332,9 @@ const ContactPage = () => {
                         <div className="p-4">
                           <button
                             onClick={openGoogleMaps}
-                            className="w-full flex items-center justify-between px-4 py-3.5 bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-semibold rounded-lg hover:shadow-[0_0_15px_rgba(69,183,186,0.3)] transition-all duration-300 group"
+                            className="w-full flex items-center justify-between px-4 py-3.5 hover:cursor-pointer bg-gradient-to-r from-[#45B7BA] to-[#2F8FA0] text-black font-semibold rounded-lg hover:shadow-[0_0_15px_rgba(69,183,186,0.3)] transition-all duration-300 group"
                           >
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-3 ">
                               <Navigation className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                               <div className="text-left">
                                 <span className="font-bold text-sm block">
@@ -388,8 +380,6 @@ const ContactPage = () => {
                 </div>
                 <ContactForm />
               </div>
-
-              {/* الخريطة */}
             </div>
           </div>
         </SectionWrapper>

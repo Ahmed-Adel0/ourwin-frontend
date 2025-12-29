@@ -195,7 +195,6 @@ const BlogPostPage = async ({ params }) => {
           </section>
         </SectionWrapper>
       </section>
-      <FAQSection />
       <Footer />
     </main>
   );

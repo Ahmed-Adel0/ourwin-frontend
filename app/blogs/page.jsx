@@ -158,7 +158,6 @@ const BlogsPage = () => {
           </div>
         </SectionWrapper>
       </section>
-      <FAQSection />
       <Footer />
     </main>
   );

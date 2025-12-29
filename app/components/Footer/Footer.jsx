@@ -1,6 +1,5 @@
 import SocialMediaCards from "./SocialMediaCards";
 import FooterLinkColumns from "./FooterLinkColumns";
-import LocationBox from "./LocationBox"; // استبدل NewsletterForm
 import CopyrightBar from "./CopyrightBar";
 
 const Footer = () => {
@@ -16,28 +15,6 @@ const Footer = () => {
               <FooterLinkColumns />
             </div>
           </div>
-        </div>
-
-        {/* الصف الأوسط: مكون الموقع بدلاً من الاشتراك */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-          {/* قسم الاتصال السريع */}
-          <div className="bg-[#006781] rounded-2xl shadow-xl shadow-black/40 p-6">
-            <h3 className="text-xl font-bold text-white mb-4">Quick Contact</h3>
-            <div className="space-y-3">
-              <p className="text-sm text-gray-200">
-                <span className="font-semibold">Email:</span> info@outwin.com
-              </p>
-              <p className="text-sm text-gray-200">
-                <span className="font-semibold">Phone:</span> +20 100 123 4567
-              </p>
-              <p className="text-sm text-gray-200">
-                Available: Sun - Thu, 9AM - 6PM
-              </p>
-            </div>
-          </div>
-
-          {/* قسم الموقع - نفس ارتفاع القسم الآخر */}
-          <LocationBox />
         </div>
       </div>
 

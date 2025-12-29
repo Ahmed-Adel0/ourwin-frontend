@@ -2,11 +2,12 @@ import Link from "next/link";
 
 // بيانات الروابط والقوائم
 const footerLinks = {
-  Home: [
-    "Why Us",
+  Company: [
     { name: "About Us", url: "/about" },
-    "Testimonials",
-    "FAQ's",
+    { name: "Services", url: "/services" },
+    { name: "Projects", url: "/projects" },
+    { name: "Clients", url: "/clients" },
+    { name: "Portfolio", url: "/portfolio" },
   ],
   Services: [
     "Digital Marketing",
@@ -16,7 +17,8 @@ const footerLinks = {
     "Website Development",
     "Events & Exhibitions",
   ],
-  Company: [{ name: "Careers", url: "/career" }],
+
+  Contact: [{ name: "Contact", url: "/contact" }],
   blogs: [{ name: "Blogs", url: "/blogs" }],
 };
 
